@@ -58,8 +58,8 @@ const sectionGroups = [
 ] as const;
 
 type SectionItem = (typeof sectionGroups)[number]["items"][number];
-const allSections: readonly SectionItem[] = sectionGroups.flatMap((g) => g.items);
-export type SectionId = (typeof allSections)[number]["id"];
+const allSections = sectionGroups.flatMap((g) => g.items) as readonly SectionItem[];
+export type SectionId = SectionItem["id"];
 
 interface SidebarProps {
   activeSection: SectionId;
