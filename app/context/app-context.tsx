@@ -20,18 +20,18 @@ import type {
   DealStage,
 } from "@/types";
 
-const DEAL_STAGES: { id: DealStage; label: string }[] = [
-  { id: "signal_detection", label: "Signal detection" },
-  { id: "champion_identified", label: "Champion identified" },
-  { id: "pov_selected", label: "POV / use case selected" },
-  { id: "pilot_design", label: "Pilot design" },
-  { id: "security_review", label: "Security review" },
-  { id: "legal_review", label: "Legal review" },
-  { id: "procurement", label: "Procurement process" },
-  { id: "executive_alignment", label: "Executive alignment" },
-  { id: "initial_deployment", label: "Initial deployment" },
-  { id: "expansion_phase_1", label: "Expansion phase 1" },
-  { id: "expansion_phase_2", label: "Expansion phase 2" },
+const DEAL_STAGES: { stage: DealStage; label: string }[] = [
+  { stage: "signal_detection", label: "Signal detection" },
+  { stage: "champion_identified", label: "Champion identified" },
+  { stage: "pov_selected", label: "POV / use case selected" },
+  { stage: "pilot_design", label: "Pilot design" },
+  { stage: "security_review", label: "Security review" },
+  { stage: "legal_review", label: "Legal review" },
+  { stage: "procurement", label: "Procurement process" },
+  { stage: "executive_alignment", label: "Executive alignment" },
+  { stage: "initial_deployment", label: "Initial deployment" },
+  { stage: "expansion_phase_1", label: "Expansion phase 1" },
+  { stage: "expansion_phase_2", label: "Expansion phase 2" },
 ];
 
 interface AppState {
