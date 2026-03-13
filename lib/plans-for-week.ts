@@ -38,6 +38,12 @@ export function getPlansForThisWeek(
   return lines.join("\n");
 }
 
+const MAX_BULLET = 32;
+
+function truncate(s: string, max: number) {
+  return s.length <= max ? s : s.slice(0, max).trimEnd().replace(/\s+\S*$/, "") + "…";
+}
+
 /**
  * Short 2–3 bullet summary for the Plans battle card.
  */
@@ -51,17 +57,16 @@ export function getPlansForThisWeekShort(
   const bullets: string[] = [];
 
   if (accountUpdates.length > 0) {
-    const latest = accountUpdates[0];
-    bullets.push(`Follow up on: ${latest.title}`);
+    bullets.push(`Follow up: ${truncate(accountUpdates[0].title, MAX_BULLET)}`);
   }
   if (toAdvance.length > 0) {
     toAdvance.slice(0, 2).forEach((i) => {
-      bullets.push(`${i.title} · ${i.owner}`);
+      bullets.push(truncate(i.title, MAX_BULLET));
     });
   }
 
   if (bullets.length === 0) {
-    return "• Add an account update or move items in the Deal Plan to see plans here.";
+    return "• Add an update or move Deal Plan items to see plans.";
   }
 
   return bullets.map((b) => `• ${b}`).join("\n");
