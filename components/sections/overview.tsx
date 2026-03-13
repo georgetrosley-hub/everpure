@@ -442,7 +442,7 @@ export function Overview({
                 value={workspaceDraft.dealThesis}
                 onChange={(event) => handleWorkspaceFieldChange("dealThesis", event.target.value)}
                 rows={3}
-                className="w-full resize-none rounded-[22px] border border-white/10 bg-black/10 px-4 py-3 text-[13px] leading-relaxed text-text-primary placeholder:text-text-muted/50 focus:border-claude-coral/30 focus:outline-none"
+                className="w-full resize-none rounded-[22px] border border-surface-border/40 bg-surface-muted/20 px-4 py-3 text-[13px] leading-relaxed text-text-primary placeholder:text-text-muted/50 focus:border-claude-coral/30 focus:outline-none"
               />
             </div>
 
@@ -454,7 +454,7 @@ export function Overview({
                 value={workspaceDraft.winTheme}
                 onChange={(event) => handleWorkspaceFieldChange("winTheme", event.target.value)}
                 rows={3}
-                className="w-full resize-none rounded-[22px] border border-white/10 bg-black/10 px-4 py-3 text-[13px] leading-relaxed text-text-primary placeholder:text-text-muted/50 focus:border-claude-coral/30 focus:outline-none"
+                className="w-full resize-none rounded-[22px] border border-surface-border/40 bg-surface-muted/20 px-4 py-3 text-[13px] leading-relaxed text-text-primary placeholder:text-text-muted/50 focus:border-claude-coral/30 focus:outline-none"
               />
             </div>
 
@@ -479,7 +479,7 @@ export function Overview({
                 value={workspaceDraft.operatorNotes}
                 onChange={(event) => handleWorkspaceFieldChange("operatorNotes", event.target.value)}
                 rows={4}
-                className="w-full resize-none rounded-[22px] border border-white/10 bg-black/10 px-4 py-3 text-[13px] leading-relaxed text-text-primary placeholder:text-text-muted/50 focus:border-claude-coral/30 focus:outline-none"
+                className="w-full resize-none rounded-[22px] border border-surface-border/40 bg-surface-muted/20 px-4 py-3 text-[13px] leading-relaxed text-text-primary placeholder:text-text-muted/50 focus:border-claude-coral/30 focus:outline-none"
               />
             </div>
           </div>
@@ -566,7 +566,7 @@ export function Overview({
                 value={updateTitle}
                 onChange={(event) => setUpdateTitle(event.target.value)}
                 placeholder="e.g. Security team asked for a cleaner deployment story"
-                className="w-full rounded-[18px] border border-white/10 bg-black/10 px-4 py-3 text-[13px] text-text-primary placeholder:text-text-muted/50 focus:border-claude-coral/30 focus:outline-none"
+                className="w-full rounded-[18px] border border-surface-border/40 bg-surface-muted/20 px-4 py-3 text-[13px] text-text-primary placeholder:text-text-muted/50 focus:border-claude-coral/30 focus:outline-none"
               />
             </div>
             <div>
@@ -599,7 +599,7 @@ export function Overview({
                 onChange={(event) => setUpdateNote(event.target.value)}
                 rows={6}
                 placeholder="What happened, what it means, and what you need to do next..."
-                className="w-full resize-none rounded-[22px] border border-white/10 bg-black/10 px-4 py-3 text-[13px] leading-relaxed text-text-primary placeholder:text-text-muted/50 focus:border-claude-coral/30 focus:outline-none"
+                className="w-full resize-none rounded-[22px] border border-surface-border/40 bg-surface-muted/20 px-4 py-3 text-[13px] leading-relaxed text-text-primary placeholder:text-text-muted/50 focus:border-claude-coral/30 focus:outline-none"
               />
             </div>
             <button
