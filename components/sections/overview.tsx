@@ -253,7 +253,7 @@ export function Overview({
             How I&apos;d build pipeline and expansion for the AI Data Cloud at {account.name}
           </h2>
           <p className="max-w-3xl text-[14px] leading-relaxed text-text-muted">
-            Data platform standardization, AI workloads, Cortex Agents, Snowflake Intelligence, and developer expansion — first wedge, champion path, pilot design, and land-and-expand. I would lean into Snowflake&apos;s governed AI story and Cortex Code / MCP for builder personas.
+            Workload-specific expansion (e.g. feature store → customer analytics → AI agents), consumption math (Year 1→2→3), and partner leverage (dbt, Fivetran, Sigma, SIs). First wedge, champion path, pilot design, land-and-expand. Governed AI story and Cortex Code / MCP for builder personas.
           </p>
         </div>
       </section>

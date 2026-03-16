@@ -104,6 +104,8 @@ Generate a detailed ROI analysis and business case. Structure it as:
 - Savings: Productivity gains, cost reduction, faster time-to-market
 - Net ROI: X%
 
+**Consumption expansion (optional):** If relevant, show Year 1 → Year 2 → Year 3 consumption trajectory (e.g. $200k → $600k → $1.5M). Snowflake is usage-based; managers value this.
+
 **Risk Factors:** What could reduce the ROI
 **Quick Win:** Fastest path to demonstrating value
 
@@ -135,8 +137,10 @@ Generate a strategic assessment for this account. This should be a concise, acti
 2. **Top 3 priorities this week** — specific, actionable items
 3. **Biggest risk** and how to mitigate
 4. **Competitive threat level** and primary competitor to watch
-5. **Expansion opportunity** — the next department/use case to target (R&D, Clinical Ops, Regulatory, etc.)
-6. **Snowflake recommended play** — the single most important thing to do next
+5. **Expansion opportunity** — workload-specific path (e.g. land ML feature store for fraud → customer analytics → AI agents), not generic "expand the platform." Name the next department/use case to target.
+6. **Consumption expansion math** — Year 1 / Year 2 / Year 3 consumption estimate (e.g. $200k → $600k → $1.5M) if relevant to this account
+7. **Partner leverage** — where AWS, dbt, Fivetran, Sigma, Accenture, Deloitte (or other ecosystem partners) could accelerate the deal
+8. **Snowflake recommended play** — the single most important thing to do next
 
 Be direct and specific. Name names, suggest timelines, quantify impact.`,
 
@@ -163,10 +167,13 @@ Generate a targeted expansion pitch for a specific department within the account
 ## Expanding Snowflake into [Department] at [Account]
 
 **The Hook:** Why this department should care (tied to their specific KPIs)
+**Workload-specific path:** Concrete sequence (e.g. land ML feature store / data app / governance use case → then expand to analytics → then AI agents). Not generic "expand the platform."
 **Use Cases:** 2-3 specific ways this department would use Snowflake (data, analytics, AI, Cortex, apps)
+**Consumption expansion math:** Year 1 / Year 2 / Year 3 consumption estimate (e.g. $200k → $600k → $1.5M) for this expansion
+**Partner leverage:** Where dbt, Fivetran, Sigma, AWS, or SIs (Accenture, Deloitte) could help land or expand
 **Value Proposition:** Quantified impact on their metrics
 **Internal Champion:** Who to approach and how (ideally leveraging existing relationships)
-**Proof Points:** Evidence from the existing deployment or similar security-aware customers
+**Proof Points:** Evidence from the existing deployment or similar customers
 **Objections to Expect:** What this department will push back on
 **Pilot Design:** A 30-day pilot scope that's easy to say yes to
 **Expected ARR:** What this expansion is worth
