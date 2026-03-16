@@ -53,9 +53,9 @@ Proven ability to build pipeline from zero in greenfield territories and convert
     },
   ],
   competencies: [
-    "Enterprise Security Platform Selling",
-    "Legacy Vendor Displacement (KnowBe4, Proofpoint)",
-    "Security & Compliance Selling (CISO, VP Security, GRC, IT, HR)",
+    "Enterprise Platform Selling",
+    "Legacy Vendor Displacement",
+    "C-suite, Procurement, Legal, Compliance and IT Selling",
     "Category Creation & Reframing",
     "Greenfield Territory Development",
     "Land-and-Expand",
