@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/app/context/theme-context";
 
@@ -11,7 +12,7 @@ interface AdaptiveLogoProps {
   size?: number;
 }
 
-/** Adaptive brand mark — theme-aware: black on light, white on dark. Light mode uses mask so shape is crisp black. */
+/** Adaptive brand mark — theme-aware: black on light, white on dark. Uses Flush Black Icon assets. */
 export function AdaptiveLogoImage({ className, size = 24 }: AdaptiveLogoProps) {
   const { theme } = useTheme();
   const isDark = theme === "dark";
@@ -19,13 +20,13 @@ export function AdaptiveLogoImage({ className, size = 24 }: AdaptiveLogoProps) {
 
   if (isDark) {
     return (
-      <img
+      <Image
         src={LOGO_WHITE}
         alt="Adaptive Security"
         width={s}
         height={s}
         className={cn("shrink-0 object-contain", className)}
-        style={{ width: s, height: s }}
+        unoptimized
       />
     );
   }
@@ -57,14 +58,14 @@ export function AdaptiveLogo({ className, size = 20 }: AdaptiveLogoProps) {
 
   if (isDark) {
     return (
-      <img
+      <Image
         src={LOGO_WHITE}
         alt=""
         width={s}
         height={s}
         className={cn("shrink-0 object-contain", className)}
-        style={{ width: s, height: s }}
         aria-hidden
+        unoptimized
       />
     );
   }

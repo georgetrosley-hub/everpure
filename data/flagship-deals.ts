@@ -182,8 +182,8 @@ const flagshipDeals: Record<string, FlagshipDealContext> = {
   },
 };
 
-export function getFlagshipDealContext(accountId: string): FlagshipDealContext | null {
-  return flagshipDeals[accountId] ?? null;
+export function getFlagshipDealContext(_accountId: string): FlagshipDealContext | null {
+  return null;
 }
 
 export function isFlagshipAccount(accountId: string): boolean {

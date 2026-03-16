@@ -13,7 +13,6 @@ import {
   Target,
 } from "lucide-react";
 import { SectionHeader } from "@/components/ui/section-header";
-import { getFlagshipDealContext } from "@/data/flagship-deals";
 import type { Account, Competitor, Stakeholder } from "@/types";
 import { cn } from "@/lib/utils";
 
@@ -40,9 +39,8 @@ export function DealSimulation({
   competitors,
 }: DealSimulationProps) {
   const [activeTab, setActiveTab] = useState<TabId>("orgMap");
-  const flagship = getFlagshipDealContext(account.id);
-  const champion = stakeholders.find((s) => s.stance === "champion");
-  const sponsor = stakeholders.find((s) => s.stance === "executive");
+  const champion = stakeholders.find((s) => s.stance === "champion") ?? stakeholders[0];
+  const sponsor = stakeholders.find((s) => s.stance === "executive") ?? stakeholders[1] ?? stakeholders[0];
   const security = stakeholders.find((s) => s.team === "Security");
   const procurement = stakeholders.find((s) => s.team === "Procurement");
 
@@ -90,7 +88,7 @@ export function DealSimulation({
               Functional buyer
             </p>
             <p className="mt-1 text-[14px] font-medium text-text-primary">
-              {champion?.name ?? flagship?.championName} · {champion?.title ?? flagship?.championTitle}
+              {champion?.name ?? "—"} · {champion?.title ?? "—"}
             </p>
             <p className="mt-2 text-[12px] text-text-secondary">
               {champion?.proofNeeded ?? "Pilot scope with clear success criteria."}
@@ -101,7 +99,7 @@ export function DealSimulation({
               Executive sponsor
             </p>
             <p className="mt-1 text-[14px] font-medium text-text-primary">
-              {sponsor?.name} · {sponsor?.title}
+              {sponsor?.name ?? "—"} · {sponsor?.title ?? "—"}
             </p>
             <p className="mt-2 text-[12px] text-text-secondary">
               {sponsor?.proofNeeded ?? "Business value narrative, not product capability."}
@@ -112,7 +110,7 @@ export function DealSimulation({
               Technical / security gate
             </p>
             <p className="mt-1 text-[14px] font-medium text-text-primary">
-              {security?.name} · {security?.title}
+              {security ? `${security.name} · ${security.title}` : "Security reviewer · To be mapped"}
             </p>
             <p className="mt-2 text-[12px] text-text-secondary">
               {security?.proofNeeded ?? "Data flow, identity, retention, bounded pilot scope."}
@@ -123,7 +121,7 @@ export function DealSimulation({
               Commercial
             </p>
             <p className="mt-1 text-[14px] font-medium text-text-primary">
-              {procurement?.name} · {procurement?.title}
+              {procurement ? `${procurement.name} · ${procurement.title}` : "Procurement lead · To be mapped"}
             </p>
             <p className="mt-2 text-[12px] text-text-secondary">
               {procurement?.proofNeeded ?? "Timing, spend, pilot-to-production path."}
@@ -182,9 +180,7 @@ export function DealSimulation({
           {[
             {
               title: "First contact",
-              body: flagship?.lastCallSummary
-                ? `Intro with champion (${flagship.championName}). ${flagship.lastCallSummary.slice(0, 120)}...`
-                : `Land via ${account.firstWedge}. Target ${champion?.title ?? "functional buyer"} for the first wedge.`,
+              body: `Land via ${account.firstWedge}. Target ${champion?.title ?? "functional buyer"} for the first wedge.`,
             },
             {
               title: "Champion creation",
@@ -192,11 +188,11 @@ export function DealSimulation({
             },
             {
               title: "Pilot design",
-              body: flagship?.pilotCriteria?.scope ?? account.firstWedge,
+              body: account.firstWedge,
             },
             {
               title: "Security / legal path",
-              body: flagship?.pilotCriteria?.securityPath ?? account.topBlockers[0] ?? "Clean deployment narrative, data flow, identity controls before the review meeting.",
+              body: account.topBlockers[0] ?? "Clean deployment narrative, data flow, identity controls before the review meeting.",
             },
           ].map((step, i) => (
             <li
@@ -256,54 +252,22 @@ export function DealSimulation({
           Rough timeline from first contact to $10M ARR potential.
         </p>
         <div className="space-y-3">
-          {flagship?.milestones.map((m) => (
-            <div
-              key={m.label}
-              className={cn(
-                "flex items-center justify-between gap-4 rounded-xl border px-4 py-3",
-                m.status === "done" && "border-emerald-400/20 bg-emerald-400/[0.04]",
-                m.status === "in_progress" && "border-accent/25 bg-accent/[0.06]",
-                m.status === "upcoming" && "border-surface-border/40"
-              )}
-            >
-              <div>
-                <p className="text-[13px] font-medium text-text-primary">{m.label}</p>
-                <p className="mt-0.5 text-[11px] text-text-muted">
-                  {m.date} {m.owner ? `· ${m.owner}` : ""}
-                </p>
-              </div>
-              <span
-                className={cn(
-                  "rounded-full px-2 py-0.5 text-[10px] font-medium",
-                  m.status === "done" && "bg-emerald-400/20 text-emerald-400",
-                  m.status === "in_progress" && "bg-accent/20 text-accent",
-                  m.status === "upcoming" && "bg-white/10 text-text-faint"
-                )}
-              >
-                {m.status.replace("_", " ")}
-              </span>
-            </div>
-          ))}
-          {!flagship?.milestones?.length && (
-            <>
-              <div className="rounded-xl border border-surface-border/40 px-4 py-3">
-                <p className="text-[13px] font-medium text-text-primary">First contact & discovery</p>
-                <p className="mt-0.5 text-[11px] text-text-muted">Weeks 1–2</p>
-              </div>
-              <div className="rounded-xl border border-surface-border/40 px-4 py-3">
-                <p className="text-[13px] font-medium text-text-primary">Champion identified, pilot scope</p>
-                <p className="mt-0.5 text-[11px] text-text-muted">Weeks 3–6</p>
-              </div>
-              <div className="rounded-xl border border-accent/25 px-4 py-3 bg-accent/[0.05]">
-                <p className="text-[13px] font-medium text-text-primary">Security & legal review</p>
-                <p className="mt-0.5 text-[11px] text-text-muted">Weeks 7–10</p>
-              </div>
-              <div className="rounded-xl border border-surface-border/40 px-4 py-3">
-                <p className="text-[13px] font-medium text-text-primary">Pilot kickoff & expansion</p>
-                <p className="mt-0.5 text-[11px] text-text-muted">Months 4–12</p>
-              </div>
-            </>
-          )}
+          <div className="rounded-xl border border-surface-border/40 px-4 py-3">
+            <p className="text-[13px] font-medium text-text-primary">First contact & discovery</p>
+            <p className="mt-0.5 text-[11px] text-text-muted">Weeks 1–2</p>
+          </div>
+          <div className="rounded-xl border border-surface-border/40 px-4 py-3">
+            <p className="text-[13px] font-medium text-text-primary">Champion identified, pilot scope</p>
+            <p className="mt-0.5 text-[11px] text-text-muted">Weeks 3–6</p>
+          </div>
+          <div className="rounded-xl border border-accent/25 px-4 py-3 bg-accent/[0.05]">
+            <p className="text-[13px] font-medium text-text-primary">Security & legal review</p>
+            <p className="mt-0.5 text-[11px] text-text-muted">Weeks 7–10</p>
+          </div>
+          <div className="rounded-xl border border-surface-border/40 px-4 py-3">
+            <p className="text-[13px] font-medium text-text-primary">Pilot kickoff & expansion</p>
+            <p className="mt-0.5 text-[11px] text-text-muted">Months 4–12</p>
+          </div>
           <div className="flex items-center gap-2 rounded-xl border border-emerald-400/25 bg-emerald-400/[0.06] px-4 py-3">
             <Target className="h-4 w-4 text-emerald-400" strokeWidth={1.8} />
             <p className="text-[13px] font-medium text-text-primary">

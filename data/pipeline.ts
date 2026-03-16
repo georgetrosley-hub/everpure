@@ -1,5 +1,5 @@
 /**
- * Simulated territory pipeline — focus accounts (Pure Storage territory).
+ * Territory pipeline — focus accounts (Pure Storage territory).
  * ADP, DuPont, St. Luke's, Tower Health, Penn State Health.
  */
 
