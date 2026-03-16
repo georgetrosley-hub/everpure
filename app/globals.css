@@ -16,11 +16,13 @@ html[data-theme="dark"] {
   --text-secondary: 200 200 200;
   --text-muted: 142 142 142;
   --text-faint: 115 115 115;
-  --accent: 16 163 127;
-  --accent-muted: 45 179 150;
-  --accent-subtle: 20 40 36;
-  --adaptive-accent: 16 163 127;
+  --accent: 251 191 36;
+  --accent-muted: 253 211 130;
+  --accent-subtle: 45 35 20;
+  --adaptive-accent: 251 191 36;
   --warm: 38 38 38;
+  --gradient-warm-start: 254 250 230;
+  --gradient-warm-end: 253 230 200;
 }
 
 html[data-theme="light"] {
@@ -33,8 +35,8 @@ html[data-theme="light"] {
   --text-secondary: 55 65 81;
   --text-muted: 107 114 128;
   --text-faint: 156 163 175;
-  --accent-subtle: 236 253 245;
-  --warm: 243 244 246;
+  --accent-subtle: 254 243 199;
+  --warm: 255 251 243;
 }
 
 * {
@@ -101,8 +103,8 @@ body {
 }
 
 @keyframes subtle-glow {
-  0%, 100% { box-shadow: 0 0 0 rgba(16, 163, 127, 0); }
-  50% { box-shadow: 0 0 20px rgba(16, 163, 127, 0.08); }
+  0%, 100% { box-shadow: 0 0 0 rgba(251, 191, 36, 0); }
+  50% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.12); }
 }
 
 .adaptive-glow {

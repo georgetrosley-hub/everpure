@@ -200,7 +200,7 @@ function MainContent() {
         onToggleCollapsed={() => setSidebarCollapsed((prev) => !prev)}
       />
       <div className="relative flex min-w-0 flex-1 flex-col overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,54,33,0.02),transparent_55%),radial-gradient(ellipse_at_bottom_left,rgba(255,54,33,0.01),transparent_55%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(251,191,36,0.06),transparent_55%),radial-gradient(ellipse_at_bottom_left,rgba(253,230,200,0.04),transparent_55%)]" />
 
         <StatusBar
           account={account}

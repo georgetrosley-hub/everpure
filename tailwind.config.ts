@@ -57,9 +57,12 @@ const config: Config = {
         lg: "12px",
       },
       boxShadow: {
-        "glow-sm": "0 0 12px rgba(16, 163, 127, 0.08)",
-        "glow-md": "0 0 24px rgba(16, 163, 127, 0.12)",
+        "glow-sm": "0 0 12px rgba(251, 191, 36, 0.1)",
+        "glow-md": "0 0 24px rgba(251, 191, 36, 0.14)",
         elevated: "0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06)",
+      },
+      backgroundImage: {
+        "warm-gradient": "linear-gradient(135deg, rgb(var(--gradient-warm-start)) 0%, rgb(var(--gradient-warm-end)) 100%)",
       },
     },
   },
