@@ -55,7 +55,7 @@ export function ExecutiveNarrative({ account, competitors }: ExecutiveNarrativeP
         messages: [
           {
             role: "user",
-            content: `Generate a board-level summary for ${account.name}. This should be a 1-page executive brief suitable for sharing with OpenAI leadership. Include: account overview, strategic importance, deal status, revenue potential ($${account.estimatedLandValue}M land / $${account.estimatedExpansionValue}M expansion), key risks, competitive dynamics, and what we need from leadership to win. Keep it concise and strategic.`,
+            content: `Generate a board-level summary for ${account.name}. This should be a 1-page executive brief suitable for sharing with Adaptive Security leadership. Include: account overview, strategic importance, deal status, revenue potential ($${account.estimatedLandValue}M land / $${account.estimatedExpansionValue}M expansion), key risks, competitive dynamics (security awareness / human risk), and what we need from leadership to win. Keep it concise and strategic.`,
           },
         ],
         account,
@@ -65,41 +65,62 @@ export function ExecutiveNarrative({ account, competitors }: ExecutiveNarrativeP
   }, [account, competitors, boardSummary]);
 
   const defaultNarrative = {
-    whyNow: "Account is evaluating AI tools. OpenAI and Microsoft are in the mix — need to move with clear governance and differentiation.",
-    whyClaude: "Constitutional AI, strong enterprise governance, predictable model behavior. Safe choice for regulated or high-stakes workflows.",
-    whyNot: "OpenAI and Copilot have broad adoption. Need to differentiate on safety, enterprise controls, and no training on customer data.",
-    impact: "Enterprise AI adoption, knowledge workflows, and expansion into core business use cases.",
-    governance: "SOC 2, audit trail, data residency. Security and Legal review in progress.",
-    rollout: "Phase 1: Pilot with controlled team. Phase 2: Broader deployment. Phase 3: Enterprise standard.",
+    whyNow: "Account is evaluating security awareness and human-risk platforms. KnowBe4 or legacy vendor in place — need to move with clear risk reduction and differentiation.",
+    whyClaude: "Deepfake and multimodal simulation, measurable risk reduction, security culture over checkbox compliance. Safe choice for regulated and high-PII environments.",
+    whyNot: "KnowBe4 and Proofpoint have broad adoption. Need to differentiate on AI-era threats, voice/SMS simulation, and behavioral risk.",
+    impact: "Security awareness, human risk reduction, platform consolidation. Expansion into enterprise agreement.",
+    governance: "HIPAA-aware content, audit trail, data handling. Security and Legal review in progress.",
+    rollout: "Phase 1: Pilot in high-visibility department. Phase 2: Broader rollout. Phase 3: Enterprise standard.",
   };
 
   const staticNarratives: Record<string, typeof defaultNarrative> = {
-    pfizer: {
-      whyNow: "Medical Affairs exploring regulated document workflows. Legal and Quality want explicit deployment narrative before sign-off.",
-      whyClaude: "Strong governance posture. Constitutional AI. Safe choice for regulated environment. No training on customer data.",
-      whyNot: "Microsoft Copilot, internal tools. Need proof package Legal and Quality can forward internally.",
-      impact: "R&D knowledge retrieval, document workflows, clinical support.",
-      governance: "Data residency, access controls, audit trail. Legal and Quality sign-off required.",
-      rollout: "Phase 1: Medical Affairs pilot. Phase 2: Broader R&D. Phase 3: Enterprise rollout.",
+    "st-lukes": {
+      whyNow: "Multi-site health system; security and compliance want human-risk platform. Legacy awareness vendor likely up for renewal.",
+      whyClaude: "Deepfake and voice simulation, measurable risk reduction. Safe choice for HIPAA environment. Training completion is not risk reduction.",
+      whyNot: "KnowBe4 or incumbent. Need proof package Legal and Compliance can forward internally.",
+      impact: "Multi-site platform agreement, displaced incumbent, clinical and admin awareness.",
+      governance: "HIPAA, access controls, audit trail. Legal and Compliance sign-off required.",
+      rollout: "Phase 1: Pilot in one division. Phase 2: Multi-site. Phase 3: Enterprise agreement.",
     },
-    jpmorgan: {
-      whyNow: "Developer productivity and AI governance are top priorities. Architecture review scheduled — need clear deployment narrative.",
-      whyClaude: "Enterprise controls, no training on customer data, strong governance. Fits regulated financial services requirements.",
-      whyNot: "Microsoft Copilot, internal builds. Differentiate on governance and best-of-breed model choice.",
-      impact: "Developer productivity, operations automation, path to expansion.",
-      governance: "Regulatory and audit requirements. Architecture and security review in progress.",
-      rollout: "Phase 1: Controlled pilot. Phase 2: Broader engineering. Phase 3: Enterprise standard.",
+    "penn-state-health": {
+      whyNow: "Clinical informatics and IT security aligned. Parallel approval tracks; measurable risk reduction winning.",
+      whyClaude: "Human-risk platform with deepfake and phishing simulation. Fits regulated healthcare and multi-stakeholder procurement.",
+      whyNot: "Legacy incumbent. Differentiate on risk reduction and executive-level reporting.",
+      impact: "Enterprise platform, displaced incumbent, expansion to affiliates.",
+      governance: "Security and compliance in progress. Procurement timeline mapped.",
+      rollout: "Phase 1: Controlled pilot. Phase 2: Broader rollout. Phase 3: Enterprise standard.",
     },
-    ...Object.fromEntries(
-      ["comcast", "morgan-stanley", "salesforce", "nvidia", "capital-one", "adp"].map((id) => [id, defaultNarrative])
-    ),
+    "tower-health": {
+      whyNow: "Multi-vendor displacement in motion. Security review and ROI building champion support.",
+      whyClaude: "Consolidate fragmented tools; deepfake and phishing simulation. Four-thread motion: security, IT, procurement, exec.",
+      whyNot: "Three legacy vendors. Need displacement narrative and ROI justification.",
+      impact: "Net-new platform agreement, vendor consolidation.",
+      governance: "Security review and procurement alignment.",
+      rollout: "Phase 1: Pilot. Phase 2: Enterprise agreement.",
+    },
+    adp: {
+      whyNow: "HR and payroll evaluating security awareness for PII-heavy workflows. Compliance and HR ops engaged.",
+      whyClaude: "Phishing and awareness for payroll/compliance. Measurable risk reduction; audit-ready evidence.",
+      whyNot: "KnowBe4 or status quo. Differentiate on engagement and human risk, not completion rates.",
+      impact: "HR and payroll awareness, compliance culture, contractor risk.",
+      governance: "PII and compliance. HR and Security sign-off.",
+      rollout: "Phase 1: HR ops pilot. Phase 2: Enterprise rollout.",
+    },
+    dupont: {
+      whyNow: "R&D and manufacturing evaluating deepfake and IP protection awareness. Security-driven modernization.",
+      whyClaude: "AI-era threat training, IP protection, executive and high-value target defense. Fits regulated and multi-site.",
+      whyNot: "Legacy or no program. Need urgency around AI-generated threats.",
+      impact: "R&D and manufacturing awareness, executive deepfake defense, expansion path.",
+      governance: "IP and data handling. Security and Legal review.",
+      rollout: "Phase 1: R&D or manufacturing pilot. Phase 2: Enterprise.",
+    },
   };
 
   const n = staticNarratives[account.id] ?? defaultNarrative;
 
   const sections = [
     { label: "Why now", content: n.whyNow },
-    { label: "Why ChatGPT", content: n.whyClaude },
+    { label: "Why Adaptive", content: n.whyClaude },
     { label: "Alternatives", content: n.whyNot },
     { label: "Impact", content: n.impact },
     { label: "Governance", content: n.governance },

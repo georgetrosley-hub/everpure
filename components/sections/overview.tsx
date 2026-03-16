@@ -107,14 +107,19 @@ export function Overview({
       className="space-y-10 sm:space-y-12"
     >
       {/* Recruiter-facing: Adaptive Security GTM */}
-      <div className="flex flex-wrap items-center gap-2 rounded-xl border border-accent/15 bg-accent/[0.04] px-4 py-3">
-        <AdaptiveLogoImage size={18} className="opacity-95" />
-        <span className="text-[12px] font-medium text-text-primary">
-          Security Awareness GTM war room — built for Adaptive Security
-        </span>
-        <span className="text-[11px] text-text-muted">
-          · George Trosley
-        </span>
+      <div className="rounded-xl border border-accent/15 bg-accent/[0.04] px-4 py-3">
+        <div className="flex flex-wrap items-center gap-2">
+          <AdaptiveLogoImage size={18} className="opacity-95" />
+          <span className="text-[12px] font-medium text-text-primary">
+            Security Awareness GTM war room — built for Adaptive Security
+          </span>
+          <span className="text-[11px] text-text-muted">
+            · George Trosley
+          </span>
+        </div>
+        <p className="mt-2 text-[11px] text-text-muted">
+          Accounts in the selector are my current Pure Storage territory (ADP, DuPont, St. Luke&apos;s, Tower Health, Penn State Health) — reframed for Adaptive Security.
+        </p>
       </div>
 
       {/* VP oversight — 30-second scan */}

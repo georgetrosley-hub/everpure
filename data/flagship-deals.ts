@@ -1,6 +1,6 @@
 /**
- * Deep deal context for flagship life sciences accounts: named progress, pilot criteria,
- * and competitive battle dynamics.
+ * Deep deal context for flagship accounts: named progress, pilot criteria,
+ * and competitive battle dynamics. Focus territory: ADP, DuPont, St. Luke's, Tower Health, Penn State Health.
  */
 
 export interface PilotCriteria {
@@ -122,34 +122,34 @@ const flagshipDeals: Record<string, FlagshipDealContext> = {
     ],
     lastCallSummary: "Maria is evaluating Snowflake for data. We need to show clinical analytics value quickly. Veeva integration is key. Quality wants governance story.",
   },
-  pfizer: {
-    championName: "Dr. Elena Vasquez",
-    championTitle: "VP, Medical Affairs",
+  "st-lukes": {
+    championName: "VP Security / CISO",
+    championTitle: "VP, Security or Director, Security Awareness",
     pilotCriteria: {
-      scope: "R&D knowledge retrieval and regulated document workflows — Medical Affairs, 35 users. Internal document search, HCP engagement prep. No patient data, no GxP-critical paths in pilot.",
+      scope: "Security awareness and deepfake training across multi-site health system — clinical, admin, executive. Phishing + voice/SMS simulation. No patient data in pilot.",
       successMetrics: [
-        "Faster retrieval of relevant internal docs for HCP inquiries",
-        "Reduced manual prep time for medical information requests",
-        "Validation package for Legal and Quality before GxP expansion",
+        "Measurable risk reduction (click-through, voice compliance)",
+        "Board-ready risk dashboard",
+        "SOC efficiency from phish triage",
       ],
-      timeline: "90-day pilot. Target kickoff Apr 8. Legal and Quality sign-off required.",
-      owner: "Elena Vasquez (Medical Affairs) + Legal, Quality",
-      securityPath: "Data residency, access controls, audit trail. Legal wants explicit IP and data handling. No GxP in pilot.",
+      timeline: "45–60 day pilot. Security and compliance sign-off required.",
+      owner: "Security leadership + Compliance, IT",
+      securityPath: "HIPAA-aware training content. Data handling and access controls. Audit trail for compliance.",
     },
     competitiveBattle: {
-      incumbent: "Microsoft Copilot, Veeva, internal knowledge tools",
-      displacementStrategy: "Position as governed data + AI platform. Unity Catalog for compliance. Mosaic AI for knowledge retrieval. Safe choice for regulated environment.",
-      keyRisk: "Legal and validation slow the deal. Need proof package they can forward internally.",
-      winCondition: "Medical Affairs gets working pilot. Legal and Quality comfortable. Expands to clinical documentation and submission prep.",
+      incumbent: "KnowBe4 or legacy awareness vendor",
+      displacementStrategy: "Position Adaptive as human-risk platform: deepfake, voice, multimodal simulation. Training completion is not risk reduction.",
+      keyRisk: "Procurement and multi-site rollout timing. Need executive sponsor before legal.",
+      winCondition: "Multi-site platform agreement. Displaced incumbent. Expansion to affiliates.",
     },
     milestones: [
-      { label: "Medical Affairs intro", date: "Mar 6", status: "done", owner: "AE" },
-      { label: "Pilot scope draft", date: "Mar 12", status: "in_progress", owner: "Elena Vasquez" },
-      { label: "Legal & Quality review", date: "Mar 28", status: "upcoming", owner: "Legal" },
-      { label: "Pilot kickoff", date: "Apr 8", status: "upcoming", owner: "Elena Vasquez" },
+      { label: "Security leadership intro", date: "Mar 6", status: "done", owner: "AE" },
+      { label: "Pilot scope draft", date: "Mar 12", status: "in_progress", owner: "Champion" },
+      { label: "Compliance & Legal review", date: "Mar 28", status: "upcoming", owner: "Legal" },
+      { label: "Pilot kickoff", date: "Apr 8", status: "upcoming", owner: "Champion" },
       { label: "90-day review", date: "Jul 8", status: "upcoming" },
     ],
-    lastCallSummary: "Elena is bought in. Regulated workflow angle resonates. Legal and Quality want explicit deployment narrative. Next: package security and governance for internal review.",
+    lastCallSummary: "Champion aligned. Deepfake and human-risk angle resonates. Legal and compliance want clear deployment narrative. Next: package security and governance for internal review.",
   },
   sanofi: {
     championName: "Pierre Dubois",

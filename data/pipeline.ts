@@ -1,6 +1,6 @@
 /**
- * Simulated territory pipeline — multiple accounts at different stages.
- * Gives the hiring manager the "territory owner" view.
+ * Simulated territory pipeline — focus accounts (Pure Storage territory).
+ * ADP, DuPont, St. Luke's, Tower Health, Penn State Health.
  */
 
 export type PipelineStage =
@@ -24,53 +24,25 @@ export interface PipelineRow {
 
 export const pipelineRows: PipelineRow[] = [
   {
-    accountId: "pfizer",
-    accountName: "Pfizer",
+    accountId: "st-lukes",
+    accountName: "St. Luke's University Health Network",
     stage: "Pilot Design",
-    valueM: 2.5,
-    nextStep: "Legal review",
+    valueM: 1.65,
+    nextStep: "Security and compliance review",
   },
   {
-    accountId: "jpmorgan",
-    accountName: "JPMorgan Chase",
+    accountId: "penn-state-health",
+    accountName: "Penn State Health",
     stage: "Security Review",
-    valueM: 3.5,
-    nextStep: "Architecture review Mar 18",
+    valueM: 1.32,
+    nextStep: "Clinical informatics alignment",
   },
   {
-    accountId: "comcast",
-    accountName: "Comcast",
-    stage: "Security Review",
-    valueM: 1.2,
-    nextStep: "Deployment narrative due",
-  },
-  {
-    accountId: "morgan-stanley",
-    accountName: "Morgan Stanley",
+    accountId: "tower-health",
+    accountName: "Tower Health",
     stage: "Champion Build",
-    valueM: 2.5,
-    nextStep: "Wealth mgmt intro",
-  },
-  {
-    accountId: "salesforce",
-    accountName: "Salesforce",
-    stage: "Discovery",
-    valueM: 2.2,
-    nextStep: "Platform eng discovery",
-  },
-  {
-    accountId: "nvidia",
-    accountName: "NVIDIA",
-    stage: "Discovery",
-    valueM: 2.8,
-    nextStep: "AI/ML team intro",
-  },
-  {
-    accountId: "capital-one",
-    accountName: "Capital One",
-    stage: "POV Selected",
-    valueM: 2.0,
-    nextStep: "Pilot scope draft",
+    valueM: 0.37,
+    nextStep: "Multi-vendor displacement narrative",
   },
   {
     accountId: "adp",
@@ -78,5 +50,12 @@ export const pipelineRows: PipelineRow[] = [
     stage: "Champion Build",
     valueM: 0.8,
     nextStep: "HR ops demo",
+  },
+  {
+    accountId: "dupont",
+    accountName: "DuPont",
+    stage: "Discovery",
+    valueM: 1.2,
+    nextStep: "R&D security intro",
   },
 ];

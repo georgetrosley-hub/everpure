@@ -37,6 +37,26 @@ const EVENT_TEMPLATES: Record<string, EventTemplate[]> = {
     { type: "champion_identified", agentName: "Research Agent", priority: "high", title: "Champion identified", explanation: "VP Clinical Dev Ops interested in Claude for document workflows.", recommendedAction: "Win on architecture and time-to-value", operationalPhrase: "champion identified" },
     { type: "competitor_detected", agentName: "Competitive Strategy Agent", priority: "high", title: "Competitive pressure elevated", explanation: "Snowflake evaluation for data warehouse. Need to land clinical analytics first.", recommendedAction: "Differentiate Lakehouse vs warehouse", operationalPhrase: "competitive pressure elevated" },
   ],
+  "st-lukes": [
+    { type: "research_signal", agentName: "Research Agent", priority: "high", title: "Opportunity detected", explanation: "Security awareness and deepfake training need across multi-site health system.", recommendedAction: "Engage Security leadership", operationalPhrase: "opportunity detected" },
+    { type: "champion_identified", agentName: "Research Agent", priority: "high", title: "Champion identified", explanation: "VP Security / CISO interested in human-risk platform and deepfake simulation.", recommendedAction: "Draft pilot scope", operationalPhrase: "champion identified" },
+    { type: "competitor_detected", agentName: "Competitive Strategy Agent", priority: "high", title: "Competitive pressure", explanation: "KnowBe4 or legacy awareness vendor in place. Displacement narrative needed.", recommendedAction: "Position on risk reduction, not training completion", operationalPhrase: "competitive pressure" },
+    { type: "security_blocker", agentName: "Security and Compliance Agent", priority: "high", title: "Compliance review recommended", explanation: "HIPAA and training content handling need mapping.", recommendedAction: "Document compliance and deployment narrative", operationalPhrase: "compliance review recommended" },
+  ],
+  "penn-state-health": [
+    { type: "research_signal", agentName: "Research Agent", priority: "high", title: "Opportunity detected", explanation: "Clinical informatics and IT security evaluating human-risk platform.", recommendedAction: "Engage parallel tracks", operationalPhrase: "opportunity detected" },
+    { type: "security_blocker", agentName: "Security and Compliance Agent", priority: "high", title: "Security review", explanation: "Procurement and security alignment in progress.", recommendedAction: "Package risk reduction metrics", operationalPhrase: "security review" },
+  ],
+  adp: [
+    { type: "research_signal", agentName: "Research Agent", priority: "medium", title: "Opportunity detected", explanation: "HR and payroll exploring security awareness for PII-heavy workflows.", recommendedAction: "Engage HR ops and compliance", operationalPhrase: "opportunity detected" },
+    { type: "champion_identified", agentName: "Research Agent", priority: "high", title: "Champion identified", explanation: "HR ops interested in phishing and awareness for payroll/compliance.", recommendedAction: "Schedule HR ops demo", operationalPhrase: "champion identified" },
+  ],
+  dupont: [
+    { type: "research_signal", agentName: "Research Agent", priority: "medium", title: "Opportunity detected", explanation: "R&D and manufacturing evaluating deepfake and IP protection awareness.", recommendedAction: "Engage R&D security", operationalPhrase: "opportunity detected" },
+  ],
+  "tower-health": [
+    { type: "champion_identified", agentName: "Research Agent", priority: "high", title: "Champion identified", explanation: "Multi-vendor displacement in motion; security review and ROI building support.", recommendedAction: "Four-thread motion: security, IT, procurement, exec", operationalPhrase: "champion identified" },
+  ],
   pfizer: [
     { type: "research_signal", agentName: "Research Agent", priority: "medium", title: "Opportunity detected", explanation: "Medical Affairs exploring regulated document workflows.", recommendedAction: "Engage Medical Affairs" },
     { type: "legal_review", agentName: "Legal and Procurement Agent", priority: "high", title: "Legal review recommended", explanation: "GxP and FDA validation considerations for AI-assisted workflows.", recommendedAction: "Prepare regulatory package", operationalPhrase: "legal review recommended" },
@@ -64,6 +84,10 @@ const APPROVAL_TEMPLATES: Record<string, { title: string; reason: string; agent:
     { title: "Launch clinical trial analytics pilot", reason: "Clinical Dev Ops interested. Snowflake in parallel.", agent: "Human Oversight Agent", impact: "$1.6M land, path to expansion", risk: "medium" },
     { title: "Prepare Veeva integration design", reason: "Key for Clinical Dev Ops.", agent: "Human Oversight Agent", impact: "Accelerates pilot", risk: "low" },
   ],
+  "st-lukes": [
+    { title: "Launch security awareness pilot", reason: "Deepfake and human-risk platform pilot.", agent: "Human Oversight Agent", impact: "$1.65M land, path to expansion", risk: "medium" },
+    { title: "Initiate compliance and Legal review", reason: "HIPAA and training content.", agent: "Human Oversight Agent", impact: "Unblocks deployment", risk: "medium" },
+  ],
   pfizer: [
     { title: "Run Medical Affairs knowledge pilot", reason: "Regulated document workflows pilot.", agent: "Human Oversight Agent", impact: "$2M land, path to expansion", risk: "medium" },
     { title: "Initiate Legal and Quality review", reason: "GxP and IP considerations.", agent: "Human Oversight Agent", impact: "Unblocks deployment", risk: "medium" },
@@ -82,11 +106,11 @@ let eventId = 0;
 let approvalId = 0;
 
 function getEventTemplates(accountId: string): EventTemplate[] {
-  return EVENT_TEMPLATES[accountId] ?? EVENT_TEMPLATES.pfizer;
+  return EVENT_TEMPLATES[accountId] ?? EVENT_TEMPLATES["st-lukes"];
 }
 
 function getApprovalTemplates(accountId: string) {
-  return APPROVAL_TEMPLATES[accountId] ?? APPROVAL_TEMPLATES.default;
+  return APPROVAL_TEMPLATES[accountId] ?? APPROVAL_TEMPLATES["st-lukes"] ?? APPROVAL_TEMPLATES.default;
 }
 
 function deterministicIndex(seed: number, max: number): number {
