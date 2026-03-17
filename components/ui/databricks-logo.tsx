@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { EverpureLogoIcon, EverpureWordmark } from "@/components/ui/everpure-logo";
 
 interface DatabricksLogoIconProps {
   className?: string;
@@ -8,20 +9,7 @@ interface DatabricksLogoIconProps {
 }
 
 export function DatabricksLogoIcon({ className, size = 20 }: DatabricksLogoIconProps) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      className={cn("text-accent", className)}
-    >
-      <path
-        d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 0h6v6h-6v-6z"
-        fill="currentColor"
-      />
-    </svg>
-  );
+  return <EverpureLogoIcon size={size} className={cn("shrink-0", className)} />;
 }
 
 interface DatabricksWordmarkProps {
@@ -31,10 +19,8 @@ interface DatabricksWordmarkProps {
 export function DatabricksWordmark({ className }: DatabricksWordmarkProps) {
   return (
     <div className={cn("flex items-center gap-2", className)}>
-      <DatabricksLogoIcon size={16} />
-      <span className="text-[13px] font-semibold tracking-tight text-text-primary">
-        Databricks
-      </span>
+      <EverpureLogoIcon size={16} />
+      <EverpureWordmark className="text-[13px]" />
     </div>
   );
 }
