@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   description:
     "Internal GTM command center for Everpure (formerly Pure Storage). Territory of existing customers — land net-new logos and expand platform footprint across workloads. Platform narrative, deal playbooks, and field kit for the data platform.",
   icons: {
-    icon: [{ url: "/icon.png", type: "image/png", sizes: "any" }],
-    apple: [{ url: "/icon.png", type: "image/png", sizes: "180x180" }],
+    icon: [{ url: "/everpure-logo.png", type: "image/png", sizes: "any" }],
+    apple: [{ url: "/everpure-logo.png", type: "image/png", sizes: "180x180" }],
   },
   openGraph: {
     title: "GTM Command Center | Everpure",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/icon.png",
+        url: "/everpure-logo.png",
         width: 512,
         height: 512,
         alt: "Everpure",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "GTM Command Center | Everpure",
     description: "Internal GTM hub for Everpure (formerly Pure Storage).",
-    images: ["/icon.png"],
+    images: ["/everpure-logo.png"],
   },
 };
 

@@ -18,7 +18,7 @@ export function EverpureLogoIcon({ className, size = 24 }: EverpureLogoProps) {
       role="img"
     >
       <Image
-        src="/icon.png"
+        src="/everpure-logo.png"
         alt="Everpure"
         width={s}
         height={s}
