@@ -54,7 +54,7 @@ const chartTooltipBg = "rgb(var(--surface-elevated))";
 const chartTooltipBorder = "1px solid rgb(var(--surface-border))";
 const accent = "rgb(var(--accent))";
 const legacyColor = "rgb(148, 163, 184)";
-const platformColor = "rgb(41, 181, 232)";
+const platformColor = "rgb(var(--accent))";
 
 function InputRow({
   label,
@@ -122,8 +122,8 @@ export function EnterpriseRoiTco() {
     const scale = tco.costOfScaleLegacy - tco.costOfScalePlatform;
     const other = tco.netSavings - admin - tools - scale;
     return [
-      { name: "Admin / ops reduction", value: admin, fill: "rgb(41, 181, 232)" },
-      { name: "Tool consolidation", value: tools, fill: "rgb(56, 189, 248)" },
+      { name: "Admin / ops reduction", value: admin, fill: accent },
+      { name: "Tool consolidation", value: tools, fill: "rgb(var(--accent-muted))" },
       { name: "Cost of scale", value: scale, fill: "rgb(100, 116, 139)" },
       { name: "Other", value: other, fill: "rgb(148, 163, 184)" },
     ].filter((d) => d.value > 0);

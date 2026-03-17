@@ -52,8 +52,8 @@ const config: Config = {
         lg: "12px",
       },
       boxShadow: {
-        "glow-sm": "0 0 12px rgba(41, 181, 232, 0.15)",
-        "glow-md": "0 0 24px rgba(41, 181, 232, 0.2)",
+        "glow-sm": "0 0 12px rgb(var(--accent) / 0.15)",
+        "glow-md": "0 0 24px rgb(var(--accent) / 0.2)",
         elevated: "0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06)",
       },
       backgroundImage: {

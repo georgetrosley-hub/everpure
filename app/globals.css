@@ -5,33 +5,45 @@
 /* Everpure GTM design system — internal AE hub */
 :root,
 html[data-theme="dark"] {
-  --surface: 15 18 22;
-  --surface-elevated: 22 26 32;
-  --surface-muted: 32 38 46;
-  --surface-border: 45 55 68;
-  --surface-divider: 40 48 58;
-  --text-primary: 241 245 249;
-  --text-secondary: 203 213 225;
-  --text-muted: 148 163 184;
-  --text-faint: 100 116 139;
-  --accent: 41 181 232;
-  --accent-muted: 56 189 248;
-  --accent-subtle: 17 86 127;
-  --gradient-warm-start: 224 242 254;
-  --gradient-warm-end: 186 230 253;
+  /* Everpure palette (dark) */
+  --surface: 45 42 39; /* Ash Gray #2D2A27 */
+  --surface-elevated: 60 54 48;
+  --surface-muted: 90 74 64;
+  --surface-border: 113 88 76; /* Walnut Brown #71584C */
+  --surface-divider: 90 74 64;
+
+  --text-primary: 255 245 227; /* Cloud White #FFF5E3 */
+  --text-secondary: 208 200 186; /* Stone Gray #D0C8BA */
+  --text-muted: 143 165 150; /* Moss Green #8FA596 */
+  --text-faint: 90 99 89; /* Basil Green #5A6359 */
+
+  --accent: 255 112 35; /* Pure Orange #FF7023 */
+  --accent-muted: 189 103 61; /* Cinnamon Brown #BD673D */
+  --accent-subtle: 149 104 93; /* Clay Pink #95685D */
+
+  --gradient-warm-start: 197 228 204; /* Mint Green #C5E4CC */
+  --gradient-warm-end: 242 205 196; /* Rose Pink #F2CDC4 */
 }
 
 html[data-theme="light"] {
-  --surface: 255 255 255;
-  --surface-elevated: 248 250 252;
-  --surface-muted: 241 245 249;
-  --surface-border: 226 232 240;
-  --surface-divider: 226 232 240;
-  --text-primary: 15 23 42;
-  --text-secondary: 51 65 85;
-  --text-muted: 100 116 139;
-  --text-faint: 148 163 184;
-  --accent-subtle: 224 242 254;
+  /* Everpure palette (light) */
+  --surface: 255 245 227; /* Cloud White #FFF5E3 */
+  --surface-elevated: 255 255 255;
+  --surface-muted: 208 200 186; /* Stone Gray #D0C8BA */
+  --surface-border: 113 88 76; /* Walnut Brown #71584C */
+  --surface-divider: 208 200 186;
+
+  --text-primary: 45 42 39; /* Ash Gray #2D2A27 */
+  --text-secondary: 113 88 76; /* Walnut Brown #71584C */
+  --text-muted: 90 99 89; /* Basil Green #5A6359 */
+  --text-faint: 143 165 150; /* Moss Green #8FA596 */
+
+  --accent: 255 112 35; /* Pure Orange #FF7023 */
+  --accent-muted: 189 103 61; /* Cinnamon Brown #BD673D */
+  --accent-subtle: 197 228 204; /* Mint Green #C5E4CC */
+
+  --gradient-warm-start: 197 228 204; /* Mint Green #C5E4CC */
+  --gradient-warm-end: 242 205 196; /* Rose Pink #F2CDC4 */
 }
 
 * {
@@ -97,8 +109,8 @@ body {
 }
 
 @keyframes subtle-glow {
-  0%, 100% { box-shadow: 0 0 0 rgba(41, 181, 232, 0); }
-  50% { box-shadow: 0 0 20px rgba(41, 181, 232, 0.15); }
+  0%, 100% { box-shadow: 0 0 0 rgb(var(--accent) / 0); }
+  50% { box-shadow: 0 0 20px rgb(var(--accent) / 0.15); }
 }
 
 .everpure-glow {
