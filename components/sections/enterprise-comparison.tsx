@@ -8,52 +8,52 @@ type Strength = "strong" | "strongest" | "moderate" | "improving" | "unknown";
 
 const rows: {
   factor: string;
-  snowflake: Strength;
-  databricks: Strength;
-  bigquery: Strength;
-  redshift?: Strength;
+  everpure: Strength;
+  netapp: Strength;
+  dell: Strength;
+  hpe?: Strength;
 }[] = [
   {
-    factor: "Governed AI — single platform for data + models + agents",
-    snowflake: "strongest",
-    databricks: "strong",
-    bigquery: "moderate",
-    redshift: "moderate",
+    factor: "Operational simplicity at scale",
+    everpure: "strongest",
+    netapp: "strong",
+    dell: "moderate",
+    hpe: "moderate",
   },
   {
-    factor: "Native Cortex Agents & Snowflake Intelligence",
-    snowflake: "strongest",
-    databricks: "improving",
-    bigquery: "moderate",
-    redshift: "unknown",
+    factor: "Consistent Tier-1 performance",
+    everpure: "strongest",
+    netapp: "strong",
+    dell: "moderate",
+    hpe: "moderate",
   },
   {
-    factor: "Multi-model (OpenAI, Anthropic) in one perimeter",
-    snowflake: "strongest",
-    databricks: "strong",
-    bigquery: "moderate",
-    redshift: "moderate",
+    factor: "Cyber recovery posture (runbooks + immutability patterns)",
+    everpure: "strong",
+    netapp: "strong",
+    dell: "strong",
+    hpe: "moderate",
   },
   {
-    factor: "Developer workflow — Cortex Code, MCP, Postgres",
-    snowflake: "strong",
-    databricks: "strong",
-    bigquery: "moderate",
-    redshift: "moderate",
+    factor: "AI/analytics file+object throughput",
+    everpure: "strong",
+    netapp: "strong",
+    dell: "moderate",
+    hpe: "moderate",
   },
   {
-    factor: "Horizon Catalog — lineage, policy, interoperability",
-    snowflake: "strongest",
-    databricks: "strong",
-    bigquery: "moderate",
-    redshift: "moderate",
+    factor: "Footprint standardization playbook",
+    everpure: "strongest",
+    netapp: "strong",
+    dell: "strong",
+    hpe: "strong",
   },
   {
-    factor: "Observability & cost control for AI workloads",
-    snowflake: "strong",
-    databricks: "strong",
-    bigquery: "moderate",
-    redshift: "unknown",
+    factor: "Procurement + bundle leverage",
+    everpure: "moderate",
+    netapp: "strong",
+    dell: "strongest",
+    hpe: "strong",
   },
 ];
 
@@ -117,16 +117,16 @@ export function EnterpriseComparison() {
                 Factor
               </th>
               <th className="px-4 pb-3 text-left text-[10px] font-medium uppercase tracking-wider text-accent">
-                Snowflake
+                Everpure
               </th>
               <th className="px-4 pb-3 text-left text-[10px] font-medium uppercase tracking-wider text-text-faint">
-                Databricks
+                NetApp
               </th>
               <th className="px-4 pb-3 text-left text-[10px] font-medium uppercase tracking-wider text-text-faint">
-                BigQuery
+                Dell EMC
               </th>
               <th className="px-4 pb-3 text-left text-[10px] font-medium uppercase tracking-wider text-text-faint">
-                Redshift
+                HPE
               </th>
             </tr>
           </thead>
@@ -135,16 +135,16 @@ export function EnterpriseComparison() {
               <tr key={row.factor} className="border-b border-surface-border/20">
                 <td className="py-3 pr-4 text-text-secondary">{row.factor}</td>
                 <td className="px-4 py-3">
-                  <StrengthBadge s={row.snowflake} />
+                  <StrengthBadge s={row.everpure} />
                 </td>
                 <td className="px-4 py-3">
-                  <StrengthBadge s={row.databricks} />
+                  <StrengthBadge s={row.netapp} />
                 </td>
                 <td className="px-4 py-3">
-                  <StrengthBadge s={row.bigquery} />
+                  <StrengthBadge s={row.dell} />
                 </td>
                 <td className="px-4 py-3">
-                  {row.redshift && <StrengthBadge s={row.redshift} />}
+                  {row.hpe && <StrengthBadge s={row.hpe} />}
                 </td>
               </tr>
             ))}
@@ -155,7 +155,7 @@ export function EnterpriseComparison() {
       <div className="rounded-xl border border-surface-border/40 bg-surface-elevated/30 px-4 py-3">
         <p className="text-[12px] text-text-muted">
           <Shield className="inline h-3.5 w-3.5 mr-1 text-accent" />
-          Internal GTM reference. Use for competitive positioning and deal conversations. Snowflake differentiates on governed AI, single platform, and enterprise trust.
+          Internal GTM reference. Use for competitive positioning and deal conversations. Keep it honest: competitor strengths are real, but win on operational outcomes and standardization.
         </p>
       </div>
     </motion.div>

@@ -39,7 +39,7 @@ export function PipelineDashboard() {
       <section className="rounded-[22px] border border-accent/20 bg-white/[0.02] p-4 sm:p-5">
         <div className="flex items-center justify-between gap-3">
           <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-text-faint">
-            Deal header (Snowflake-style)
+            Deal header (CRM-style)
           </p>
           <p className="text-[11px] text-text-muted">
             Forecast:{" "}

@@ -22,16 +22,16 @@ import {
   getDynamicInsight,
   formatCurrency,
   type LegacyInputs,
-  type SnowflakeInputs,
+  type PlatformInputs,
   type TCOResults,
   DEFAULT_LEGACY,
-  DEFAULT_SNOWFLAKE,
+  DEFAULT_PLATFORM,
   PHARMA_LEGACY,
-  PHARMA_SNOWFLAKE,
+  PHARMA_PLATFORM,
   FINANCIAL_LEGACY,
-  FINANCIAL_SNOWFLAKE,
+  FINANCIAL_PLATFORM,
   DIGITAL_LEGACY,
-  DIGITAL_SNOWFLAKE,
+  DIGITAL_PLATFORM,
 } from "@/lib/roi-tco-calculations";
 import {
   Calculator,
@@ -54,7 +54,7 @@ const chartTooltipBg = "rgb(var(--surface-elevated))";
 const chartTooltipBorder = "1px solid rgb(var(--surface-border))";
 const accent = "rgb(var(--accent))";
 const legacyColor = "rgb(148, 163, 184)";
-const snowflakeColor = "rgb(41, 181, 232)";
+const platformColor = "rgb(41, 181, 232)";
 
 function InputRow({
   label,
@@ -96,22 +96,22 @@ type TabId = "tco" | "businessValue";
 
 export function EnterpriseRoiTco() {
   const [legacy, setLegacy] = useState<LegacyInputs>({ ...DEFAULT_LEGACY });
-  const [snowflake, setSnowflake] = useState<SnowflakeInputs>({ ...DEFAULT_SNOWFLAKE });
+  const [platform, setPlatform] = useState<PlatformInputs>({ ...DEFAULT_PLATFORM });
   const [activeTab, setActiveTab] = useState<TabId>("tco");
   const [assumptionsOpen, setAssumptionsOpen] = useState(false);
 
-  const tco = useMemo(() => computeTCO(legacy, snowflake), [legacy, snowflake]);
+  const tco = useMemo(() => computeTCO(legacy, platform), [legacy, platform]);
   const businessValue = useMemo(
-    () => computeBusinessValue(legacy, snowflake, tco),
-    [legacy, snowflake, tco]
+    () => computeBusinessValue(legacy, platform, tco),
+    [legacy, platform, tco]
   );
-  const insight = useMemo(() => getDynamicInsight(tco, legacy, snowflake), [tco, legacy, snowflake]);
+  const insight = useMemo(() => getDynamicInsight(tco, legacy, platform), [tco, legacy, platform]);
 
   const chartDataTCO = useMemo(
     () => [
-      { name: "Year 1", legacy: tco.legacyY1, snowflake: tco.snowflakeY1 },
-      { name: "Year 2", legacy: tco.legacyY2, snowflake: tco.snowflakeY2 },
-      { name: "Year 3", legacy: tco.legacyY3, snowflake: tco.snowflakeY3 },
+      { name: "Year 1", legacy: tco.legacyY1, platform: tco.platformY1 },
+      { name: "Year 2", legacy: tco.legacyY2, platform: tco.platformY2 },
+      { name: "Year 3", legacy: tco.legacyY3, platform: tco.platformY3 },
     ],
     [tco]
   );
@@ -119,7 +119,7 @@ export function EnterpriseRoiTco() {
   const waterfallData = useMemo(() => {
     const admin = tco.adminReduction3y;
     const tools = tco.toolConsolidation3y;
-    const scale = tco.costOfScaleLegacy - tco.costOfScaleSnowflake;
+    const scale = tco.costOfScaleLegacy - tco.costOfScalePlatform;
     const other = tco.netSavings - admin - tools - scale;
     return [
       { name: "Admin / ops reduction", value: admin, fill: "rgb(41, 181, 232)" },
@@ -131,16 +131,16 @@ export function EnterpriseRoiTco() {
 
   const growthLineData = useMemo(
     () => [
-      { year: "Y1", legacy: tco.legacyY1, snowflake: tco.snowflakeY1 },
-      { year: "Y2", legacy: tco.legacyY2, snowflake: tco.snowflakeY2 },
-      { year: "Y3", legacy: tco.legacyY3, snowflake: tco.snowflakeY3 },
+      { year: "Y1", legacy: tco.legacyY1, platform: tco.platformY1 },
+      { year: "Y2", legacy: tco.legacyY2, platform: tco.platformY2 },
+      { year: "Y3", legacy: tco.legacyY3, platform: tco.platformY3 },
     ],
     [tco]
   );
 
-  const applyPreset = (l: LegacyInputs, s: SnowflakeInputs) => {
+  const applyPreset = (l: LegacyInputs, s: PlatformInputs) => {
     setLegacy({ ...l });
-    setSnowflake({ ...s });
+    setPlatform({ ...s });
   };
 
   return (
@@ -152,7 +152,7 @@ export function EnterpriseRoiTco() {
     >
       <SectionHeader
         title="Enterprise Data Platform ROI / TCO Model"
-        subtitle="Compare legacy data stack vs Snowflake over 3 years. Simplify the data estate, consolidate fragmented tooling, and align spend to actual usage."
+        subtitle="Compare legacy data stack vs a modernized platform over 3 years. Simplify the estate, reduce overhead, and align spend to outcomes."
       />
 
       {/* Tabs */}
@@ -222,7 +222,7 @@ export function EnterpriseRoiTco() {
             </div>
             <button
               type="button"
-              onClick={() => applyPreset(DEFAULT_LEGACY, DEFAULT_SNOWFLAKE)}
+                onClick={() => applyPreset(DEFAULT_LEGACY, DEFAULT_PLATFORM)}
               className="mt-3 flex items-center gap-2 text-[12px] text-accent hover:text-accent/90"
             >
               <RotateCcw className="h-3.5 w-3.5" />
@@ -237,13 +237,13 @@ export function EnterpriseRoiTco() {
             <div className="space-y-0 divide-y divide-surface-border/40">
               <div className="py-2">
                 <div className="flex items-center justify-between gap-3">
-                  <label className="text-[12px] text-text-secondary">Snowflake Y1 consumption</label>
+                  <label className="text-[12px] text-text-secondary">Platform Y1 spend</label>
                   <input
                     type="number"
                     min={0}
                     step={100000}
-                    value={snowflake.year1Consumption}
-                    onChange={(e) => setSnowflake((p) => ({ ...p, year1Consumption: Number(e.target.value) || 0 }))}
+                    value={platform.year1Consumption}
+                    onChange={(e) => setPlatform((p) => ({ ...p, year1Consumption: Number(e.target.value) || 0 }))}
                     className="w-28 rounded-md border border-surface-border bg-surface-elevated px-2 py-1.5 text-right text-[13px] tabular-nums text-text-primary outline-none focus:border-accent/50"
                   />
                 </div>
@@ -252,21 +252,21 @@ export function EnterpriseRoiTco() {
                   min={200000}
                   max={3000000}
                   step={100000}
-                  value={snowflake.year1Consumption}
-                  onChange={(e) => setSnowflake((p) => ({ ...p, year1Consumption: Number(e.target.value) }))}
+                  value={platform.year1Consumption}
+                  onChange={(e) => setPlatform((p) => ({ ...p, year1Consumption: Number(e.target.value) }))}
                   className="mt-1.5 h-1.5 w-full appearance-none rounded-full bg-surface-muted accent-accent"
                 />
               </div>
               <div className="py-2">
                 <div className="flex items-center justify-between gap-3">
-                  <label className="text-[12px] text-text-secondary">Snowflake growth rate</label>
+                  <label className="text-[12px] text-text-secondary">Growth rate</label>
                   <input
                     type="number"
                     min={0}
                     max={80}
                     step={1}
-                    value={snowflake.consumptionGrowthRatePct}
-                    onChange={(e) => setSnowflake((p) => ({ ...p, consumptionGrowthRatePct: Number(e.target.value) || 0 }))}
+                    value={platform.consumptionGrowthRatePct}
+                    onChange={(e) => setPlatform((p) => ({ ...p, consumptionGrowthRatePct: Number(e.target.value) || 0 }))}
                     className="w-16 rounded-md border border-surface-border bg-surface-elevated px-2 py-1.5 text-right text-[13px] tabular-nums text-text-primary outline-none focus:border-accent/50"
                   />
                   <span className="text-[11px] text-text-faint">%</span>
@@ -276,8 +276,8 @@ export function EnterpriseRoiTco() {
                   min={0}
                   max={80}
                   step={5}
-                  value={snowflake.consumptionGrowthRatePct}
-                  onChange={(e) => setSnowflake((p) => ({ ...p, consumptionGrowthRatePct: Number(e.target.value) }))}
+                  value={platform.consumptionGrowthRatePct}
+                  onChange={(e) => setPlatform((p) => ({ ...p, consumptionGrowthRatePct: Number(e.target.value) }))}
                   className="mt-1.5 h-1.5 w-full appearance-none rounded-full bg-surface-muted accent-accent"
                 />
               </div>
@@ -393,46 +393,46 @@ export function EnterpriseRoiTco() {
                   </div>
                   <div>
                     <p className="mb-2 text-[11px] font-medium uppercase tracking-wider text-text-faint">
-                      Snowflake
+                      Platform
                     </p>
                     <div className="space-y-0 divide-y divide-surface-border/40">
                       <InputRow
                         label="Year 1 consumption"
-                        value={snowflake.year1Consumption}
-                        onChange={(v) => setSnowflake((p) => ({ ...p, year1Consumption: v }))}
+                        value={platform.year1Consumption}
+                        onChange={(v) => setPlatform((p) => ({ ...p, year1Consumption: v }))}
                       />
                       <InputRow
                         label="Consumption growth rate"
-                        value={snowflake.consumptionGrowthRatePct}
-                        onChange={(v) => setSnowflake((p) => ({ ...p, consumptionGrowthRatePct: v }))}
+                        value={platform.consumptionGrowthRatePct}
+                        onChange={(v) => setPlatform((p) => ({ ...p, consumptionGrowthRatePct: v }))}
                         max={80}
                         step={1}
                         suffix="%"
                       />
                       <InputRow
                         label="Storage"
-                        value={snowflake.storage}
-                        onChange={(v) => setSnowflake((p) => ({ ...p, storage: v }))}
+                        value={platform.storage}
+                        onChange={(v) => setPlatform((p) => ({ ...p, storage: v }))}
                       />
                       <InputRow
                         label="Admin / operations"
-                        value={snowflake.adminOperations}
-                        onChange={(v) => setSnowflake((p) => ({ ...p, adminOperations: v }))}
+                        value={platform.adminOperations}
+                        onChange={(v) => setPlatform((p) => ({ ...p, adminOperations: v }))}
                       />
                       <InputRow
                         label="Migration / implementation (Y1)"
-                        value={snowflake.migrationImplementationY1}
-                        onChange={(v) => setSnowflake((p) => ({ ...p, migrationImplementationY1: v }))}
+                        value={platform.migrationImplementationY1}
+                        onChange={(v) => setPlatform((p) => ({ ...p, migrationImplementationY1: v }))}
                       />
                       <InputRow
                         label="AI expansion"
-                        value={snowflake.aiExpansion}
-                        onChange={(v) => setSnowflake((p) => ({ ...p, aiExpansion: v }))}
+                        value={platform.aiExpansion}
+                        onChange={(v) => setPlatform((p) => ({ ...p, aiExpansion: v }))}
                       />
                       <InputRow
                         label="App / data sharing expansion"
-                        value={snowflake.appSharingExpansion}
-                        onChange={(v) => setSnowflake((p) => ({ ...p, appSharingExpansion: v }))}
+                        value={platform.appSharingExpansion}
+                        onChange={(v) => setPlatform((p) => ({ ...p, appSharingExpansion: v }))}
                       />
                     </div>
                   </div>
@@ -497,7 +497,7 @@ export function EnterpriseRoiTco() {
                 {/* Stacked bar: 3-year TCO */}
                 <div className="rounded-xl border border-surface-border/60 bg-surface-elevated/40 p-4">
                   <p className="mb-3 text-[12px] font-medium text-text-secondary">
-                    Three-year TCO — Legacy vs Snowflake
+                    Three-year TCO — Legacy vs Platform
                   </p>
                   <div className="h-64">
                     <ResponsiveContainer width="100%" height="100%">
@@ -524,10 +524,10 @@ export function EnterpriseRoiTco() {
                         />
                         <Legend
                           wrapperStyle={{ fontSize: 11 }}
-                          formatter={(v) => (v === "legacy" ? "Legacy stack" : "Snowflake")}
+                          formatter={(v) => (v === "legacy" ? "Legacy stack" : "Platform")}
                         />
                         <Bar dataKey="legacy" name="legacy" fill={legacyColor} radius={[0, 0, 0, 0]} />
-                        <Bar dataKey="snowflake" name="snowflake" fill={snowflakeColor} radius={[0, 0, 0, 0]} />
+                        <Bar dataKey="platform" name="platform" fill={platformColor} radius={[0, 0, 0, 0]} />
                       </BarChart>
                     </ResponsiveContainer>
                   </div>
@@ -564,7 +564,7 @@ export function EnterpriseRoiTco() {
                       </div>
                     ) : (
                       <p className="py-8 text-center text-[13px] text-text-muted">
-                        Adjust inputs to see savings drivers. When Snowflake TCO is lower, savings from admin, tools, and scale appear here.
+                        Adjust inputs to see savings drivers. When platform TCO is lower, savings from admin, tools, and scale appear here.
                       </p>
                     )}
                   </div>
@@ -572,7 +572,7 @@ export function EnterpriseRoiTco() {
                   {/* Line: cost growth */}
                   <div className="rounded-xl border border-surface-border/60 bg-surface-elevated/40 p-4">
                     <p className="mb-3 text-[12px] font-medium text-text-secondary">
-                      Cost trajectory — Legacy vs Snowflake
+                      Cost trajectory — Legacy vs Platform
                     </p>
                     <div className="h-48">
                       <ResponsiveContainer width="100%" height="100%">
@@ -591,7 +591,7 @@ export function EnterpriseRoiTco() {
                             formatter={(value: number) => [formatCurrency(value), ""]}
                           />
                           <Line type="monotone" dataKey="legacy" stroke={legacyColor} strokeWidth={2} dot={{ r: 4 }} name="Legacy" />
-                          <Line type="monotone" dataKey="snowflake" stroke={snowflakeColor} strokeWidth={2} dot={{ r: 4 }} name="Snowflake" />
+                          <Line type="monotone" dataKey="platform" stroke={platformColor} strokeWidth={2} dot={{ r: 4 }} name="Platform" />
                         </LineChart>
                       </ResponsiveContainer>
                     </div>

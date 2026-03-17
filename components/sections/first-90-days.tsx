@@ -62,7 +62,7 @@ export function First90Days({
       className="space-y-10 sm:space-y-12"
     >
       <SectionHeader
-        title="First 90 days as Snowflake AE"
+        title="First 90 days"
         subtitle="Operator thinking: territory → pipeline → pilots. Not ideas, execution."
       />
 
@@ -136,7 +136,7 @@ export function First90Days({
           {
             id: "sequence-plan",
             label: "Sequence my first 90 days",
-            prompt: `I'm starting as a Snowflake AE. Here are my current items for ${account.name}: ${thisWeek.map((i) => i.title).join("; ")}. Give me a clear 30/60/90 sequence with owners and suggested messaging for the AI Data Cloud.`,
+            prompt: `I'm starting in this territory. Here are my current items for ${account.name}: ${thisWeek.map((i) => i.title).join("; ")}. Give me a clear 30/60/90 sequence with owners and suggested messaging for a land-and-expand platform motion.`,
           },
           {
             id: "champion-messaging",

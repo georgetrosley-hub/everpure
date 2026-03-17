@@ -5,7 +5,7 @@ import { AlertTriangle, ArrowRight, Crosshair, Users, Eye, CircleDot, Zap, Targe
 import { SectionHeader } from "@/components/ui/section-header";
 import type { SectionId } from "@/components/layout/sidebar";
 import { MetricCard } from "@/components/ui/metric-card";
-import { SnowflakeLogoIcon } from "@/components/ui/snowflake-logo";
+import { EverpureLogoIcon } from "@/components/ui/everpure-logo";
 import { useToast } from "@/app/context/toast-context";
 import { isStale } from "@/lib/deal-health";
 import { getPlansForThisWeek, getPlansForThisWeekShort } from "@/lib/plans-for-week";
@@ -108,7 +108,7 @@ export function Overview({
       <div className="rounded-2xl border border-surface-border/50 bg-surface-elevated/30 p-4 sm:p-5">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <SnowflakeLogoIcon size={32} className="shrink-0 opacity-95" />
+            <EverpureLogoIcon size={32} className="shrink-0 opacity-95" />
             <div>
               <h1 className="text-[18px] font-semibold tracking-tight text-text-primary sm:text-[20px]">
                 {account.name}
@@ -128,7 +128,7 @@ export function Overview({
           </div>
         </div>
         <p className="mt-4 text-[12px] text-text-secondary">
-          This territory is built on existing customers. Use this view to land net-new logos and aggressively expand consumption and use cases within each account — pipeline, stakeholders, deal plan, and field kit. Select an account in the header to switch.
+          Use this view to land net-new logos and expand platform footprint within each account — pipeline, stakeholders, deal plan, and field kit. Select an account in the header to switch.
         </p>
       </div>
 
@@ -332,7 +332,7 @@ export function Overview({
         <aside className="min-w-0 space-y-4">
           <div className="rounded-[28px] border border-accent/15 bg-accent/[0.05] p-4 sm:p-6">
             <div className="flex items-center gap-2">
-              <SnowflakeLogoIcon size={16} className="opacity-90" />
+              <EverpureLogoIcon size={16} className="opacity-90" />
               <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-accent/80">
                 My current take
               </p>

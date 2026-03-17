@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Resume } from "@/components/sections/resume";
 import { WhyGeorge } from "@/components/sections/why-george";
 
-/** Single page merging Platform Overview + Why Snowflake Why Now for a simpler nav. */
+/** Single page merging Platform Overview + territory POV for a simpler nav. */
 export function PlatformStrategy() {
   return (
     <motion.div

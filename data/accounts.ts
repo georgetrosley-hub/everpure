@@ -15,7 +15,7 @@ export const accounts: Account[] = [
     securitySensitivity: 0,
     complianceComplexity: 0,
     competitivePressure: 0,
-    existingVendorFootprint: ["Databricks (publicly referenced)", "Snowflake (publicly referenced)"],
+    existingVendorFootprint: ["Databricks (publicly referenced)"],
     executiveSponsors: [],
     firstWedge: "Governed serving layer + external data distribution",
     estimatedLandValue: 0,

@@ -1,11 +1,11 @@
 "use client";
 
-import { SnowflakeLogoIcon } from "@/components/ui/snowflake-logo";
+import { EverpureLogoIcon } from "@/components/ui/everpure-logo";
 
 interface SectionHeaderProps {
   title: string;
   subtitle?: string;
-  /** Show Snowflake logo next to title for a consistent branded look */
+  /** Show Everpure logo next to title for a consistent branded look */
   showLogo?: boolean;
 }
 
@@ -14,7 +14,7 @@ export function SectionHeader({ title, subtitle, showLogo }: SectionHeaderProps)
     <header className="mb-6 sm:mb-8 lg:mb-10">
       <div className="flex items-center gap-3">
         {showLogo && (
-          <SnowflakeLogoIcon size={28} className="shrink-0 opacity-90" />
+          <EverpureLogoIcon size={28} className="shrink-0 opacity-90" />
         )}
         <div>
           <h2 className="text-[15px] font-medium tracking-tight text-text-primary sm:text-[16px]">

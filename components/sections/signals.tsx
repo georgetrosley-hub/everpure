@@ -71,7 +71,7 @@ export function Signals({
           {
             id: "competitor-memo",
             label: "Competitor memo",
-            prompt: `Write a concise competitor memo for ${account.name}: who the most dangerous competitor is, how they will position, and how I should keep the deal focused on where Snowflake wins.`,
+            prompt: `Write a concise competitor memo for ${account.name}: who the most dangerous competitor is, how they will position, and how I should keep the deal focused on where we win.`,
           },
         ]}
       />

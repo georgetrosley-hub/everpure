@@ -12,7 +12,6 @@ import { PlatformStrategy } from "@/components/sections/platform-strategy";
 import { First90AndFieldKit } from "@/components/sections/first90-and-field-kit";
 import { UseCasesAndPositioning } from "@/components/sections/use-cases-and-positioning";
 import { EnterpriseRoiTco } from "@/components/sections/enterprise-roi-tco";
-import { SnowflakeCrashCourse } from "@/components/sections/snowflake-crash-course";
 import { motion, AnimatePresence } from "framer-motion";
 
 function MainContent() {
@@ -73,7 +72,6 @@ function MainContent() {
   const sections: Record<SectionId, React.ReactNode> = {
     platformStrategy: <PlatformStrategy />,
     roiTco: <EnterpriseRoiTco />,
-    crashCourse: <SnowflakeCrashCourse />,
     accounts: <AccountListDashboard />,
     overview: (
       <Overview

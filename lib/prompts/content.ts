@@ -5,12 +5,12 @@ export const CONTENT_PROMPTS: Record<string, string> = {
 
 Generate a dynamic, account-specific competitive battle card. Structure it as:
 
-## [Competitor Name] vs Snowflake — Battle Card for [Account]
+## [Competitor Name] vs Everpure — Battle Card for [Account]
 
 **Their Pitch:** What the competitor will say to this customer
 **Their Strengths:** Be honest about where they're strong
 **Their Weaknesses:** Where they fall short for THIS account
-**Our Positioning:** How to position the Snowflake AI Data Cloud specifically for this account
+**Our Positioning:** How to position Everpure (formerly Pure Storage) specifically for this account
 **Trap Questions:** 3 questions to ask the customer that expose the competitor's weaknesses
 **Landmines:** Things they'll say about us and how to respond
 **Win Theme:** The 1-sentence positioning that wins this deal
@@ -63,24 +63,23 @@ Be honest. If the objection has merit, acknowledge it and explain how we mitigat
 
   security_qa: `${BASE_SYSTEM_PROMPT}
 
-You are answering security and compliance questions on behalf of Snowflake. Your answers should be:
-- Accurate based on Snowflake's known security and product posture (AI Data Cloud, Horizon, privatelink, governance)
+You are answering security and compliance questions on behalf of Everpure (formerly Pure Storage). Your answers should be:
+- Accurate based on Everpure's known security and product posture
 - Specific and detailed enough to satisfy an enterprise security or compliance team
 - Formatted for copy/paste into a security questionnaire response
 
-Key facts about Snowflake:
-- AI Data Cloud: data warehouse, lake, Cortex AI, Snowflake Intelligence, Cortex Agents, Cortex Code, Snowflake Postgres
-- Governed data, lineage (Horizon Catalog), resource budgets for AI, privatelink-only access
-- Multi-model (OpenAI, Anthropic) in one perimeter; enterprise controls and observability (Observe)
-- Trust Center, compliance, and enterprise deployment patterns
+Key facts to cover:
+- Data protection and recovery posture (immutability where applicable, runbooks, RPO/RTO targets)
+- Encryption, access controls, auditability, and operational controls
+- Integration with backup/recovery ecosystems and security tooling
 
-Answer the specific question asked. If you're not certain about a detail, say so and recommend the seller verify with Snowflake or the customer's security team.`,
+Answer the specific question asked. If you're not certain about a detail, say so and recommend the seller verify with Everpure or the customer's security team.`,
 
   roi_calculator: `${BASE_SYSTEM_PROMPT}
 
 Generate a detailed ROI analysis and business case. Structure it as:
 
-## Business Case: Snowflake AI Data Cloud for [Use Case] at [Account]
+## Business Case: Everpure (formerly Pure Storage) for [Use Case] at [Account]
 
 **Executive Summary:** 2-3 sentence overview of the opportunity
 
@@ -90,21 +89,21 @@ Generate a detailed ROI analysis and business case. Structure it as:
 - Pain points and inefficiencies
 
 **Proposed Solution:**
-- How Snowflake addresses each pain point
-- Implementation approach (AI Data Cloud deployment)
+- How Everpure addresses each pain point
+- Implementation approach (platform deployment/expansion)
 - Timeline to value
 
 **Financial Impact:**
-| Metric | Current | With Snowflake | Impact |
+| Metric | Current | With Everpure | Impact |
 |--------|---------|-----------------|--------|
 | [specific metrics] | | | |
 
 **Year 1 ROI:**
-- Investment: Snowflake platform costs
+- Investment: platform costs
 - Savings: Productivity gains, cost reduction, faster time-to-market
 - Net ROI: X%
 
-**Consumption expansion (optional):** If relevant, show Year 1 → Year 2 → Year 3 consumption trajectory (e.g. $200k → $600k → $1.5M). Snowflake is usage-based; managers value this.
+**Expansion (optional):** If relevant, show Year 1 → Year 2 → Year 3 footprint expansion trajectory (land → expand → standardize).
 
 **Risk Factors:** What could reduce the ROI
 **Quick Win:** Fastest path to demonstrating value
@@ -119,8 +118,8 @@ Generate a comprehensive executive narrative for this account. This should read 
 
 **The Opportunity:** Why this account, why now (2-3 sentences)
 **Strategic Context:** What's happening at the company that creates the opening
-**Why Snowflake Wins Here:** Specific differentiators that matter for THIS life sciences account
-**Competitive Dynamics:** Who else is in play (Snowflake, Palantir, AWS, etc.) and how we're positioned
+**Why Everpure Wins Here:** Specific differentiators that matter for THIS account
+**Competitive Dynamics:** Who else is in play (storage vendors, cloud-native options, incumbents) and how we're positioned
 **The Path:** Phase 1 (Land) → Phase 2 (Expand) → Phase 3 (Enterprise) with specifics
 **Value at Stake:** Land value, expansion potential, strategic importance
 **Key Risks:** What could derail us and mitigation
@@ -140,13 +139,13 @@ Generate a strategic assessment for this account. This should be a concise, acti
 5. **Expansion opportunity** — workload-specific path (e.g. land ML feature store for fraud → customer analytics → AI agents), not generic "expand the platform." Name the next department/use case to target.
 6. **Consumption expansion math** — Year 1 / Year 2 / Year 3 consumption estimate (e.g. $200k → $600k → $1.5M) if relevant to this account
 7. **Partner leverage** — where AWS, dbt, Fivetran, Sigma, Accenture, Deloitte (or other ecosystem partners) could accelerate the deal
-8. **Snowflake recommended play** — the single most important thing to do next
+8. **Recommended play** — the single most important thing to do next
 
 Be direct and specific. Name names, suggest timelines, quantify impact.`,
 
   use_case_recommendation: `${BASE_SYSTEM_PROMPT}
 
-Based on the account profile, recommend the top Snowflake AI Data Cloud use cases (data engineering, analytics, AI/ML, Cortex Agents, Snowflake Intelligence, developer workflow). For each:
+Based on the account profile, recommend the top Everpure use cases (Tier-1 performance, cyber recovery posture, enterprise imaging, backup/recovery integration, AI-adjacent file/object pipelines). For each:
 
 **Use Case:** Name (e.g. deepfake training for execs, phishing sims for contact center, security culture for engineering)
 **Department:** Where it lives (Security, HR, Engineering, Customer Support, etc.)
@@ -164,11 +163,11 @@ Rank by a combination of business impact and likelihood of adoption for THIS spe
 
 Generate a targeted expansion pitch for a specific department within the account. Structure it as:
 
-## Expanding Snowflake into [Department] at [Account]
+## Expanding Everpure into [Department] at [Account]
 
 **The Hook:** Why this department should care (tied to their specific KPIs)
 **Workload-specific path:** Concrete sequence (e.g. land ML feature store / data app / governance use case → then expand to analytics → then AI agents). Not generic "expand the platform."
-**Use Cases:** 2-3 specific ways this department would use Snowflake (data, analytics, AI, Cortex, apps)
+**Use Cases:** 2-3 specific ways this department would use Everpure (performance, resilience, recovery posture, AI data paths)
 **Consumption expansion math:** Year 1 / Year 2 / Year 3 consumption estimate (e.g. $200k → $600k → $1.5M) for this expansion
 **Partner leverage:** Where dbt, Fivetran, Sigma, AWS, or SIs (Accenture, Deloitte) could help land or expand
 **Value Proposition:** Quantified impact on their metrics

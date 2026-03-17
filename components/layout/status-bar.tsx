@@ -16,7 +16,7 @@ import {
 import { useApiKey } from "@/app/context/api-key-context";
 import { useTheme } from "@/app/context/theme-context";
 import { cn } from "@/lib/utils";
-import { SnowflakeLogoIcon } from "@/components/ui/snowflake-logo";
+import { EverpureLogoIcon } from "@/components/ui/everpure-logo";
 import type { Account } from "@/types";
 import type { DealHealthSummary } from "@/lib/deal-health";
 
@@ -168,7 +168,7 @@ export function StatusBar({
                   </>
                 ) : (
                   <>
-                    <SnowflakeLogoIcon size={14} className="opacity-70" />
+                    <EverpureLogoIcon size={14} className="opacity-70" />
                     <span className="hidden text-[11px] text-text-faint sm:inline">In sync</span>
                   </>
                 )}
@@ -223,7 +223,7 @@ export function StatusBar({
           <div className="w-full max-w-md rounded-xl border border-surface-border/50 bg-surface-elevated shadow-2xl">
             <div className="flex items-center justify-between border-b border-surface-border/40 px-5 py-4">
               <div className="flex items-center gap-3">
-                <SnowflakeLogoIcon size={24} className="shrink-0 opacity-90" />
+                <EverpureLogoIcon size={24} className="shrink-0 opacity-90" />
                 <div>
                   <p className="text-[13px] font-medium text-text-primary">API Key</p>
                   <p className="mt-1 text-[11px] text-text-muted">

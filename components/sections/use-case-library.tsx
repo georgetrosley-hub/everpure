@@ -11,17 +11,12 @@ import { cn } from "@/lib/utils";
 import type { Account, Competitor } from "@/types";
 
 const useCases = [
-  { id: "dev_productivity", name: "Developer Productivity", icon: Code, industry: "Cross-Industry", function: "Engineering", complexity: "Low", timeToValue: "2-4 weeks", description: "Cortex Code, AI-assisted development, and governed workflows. Snowsight, CLI, and MCP." },
-  { id: "knowledge_retrieval", name: "Knowledge Retrieval & Search", icon: Search, industry: "Cross-Industry", function: "IT/Operations", complexity: "Medium", timeToValue: "4-8 weeks", description: "Enterprise search, document Q&A, and RAG over internal knowledge bases and docs." },
-  { id: "customer_support", name: "Customer Support Automation", icon: HeadphonesIcon, industry: "Cross-Industry", function: "Support", complexity: "Medium", timeToValue: "4-8 weeks", description: "Ticket triage, response drafting, escalation handling, and knowledge-assisted resolution." },
-  { id: "document_workflows", name: "Document Processing & Review", icon: FileText, industry: "Cross-Industry", function: "Legal/Compliance", complexity: "Medium", timeToValue: "6-10 weeks", description: "Contract analysis, compliance review, summarization, and regulated document workflows." },
-  { id: "sales_enablement", name: "Sales Enablement", icon: Users, industry: "Cross-Industry", function: "Sales", complexity: "Low", timeToValue: "2-4 weeks", description: "Proposal drafting, objection handling, call prep, and competitive battle card generation." },
-  { id: "regulatory_compliance", name: "Regulatory & Compliance", icon: ShieldCheck, industry: "Regulated", function: "Compliance", complexity: "High", timeToValue: "8-12 weeks", description: "Regulatory submission prep, audit documentation, policy review, and compliance workflows." },
-  { id: "clinical_analytics", name: "Clinical Trial Analytics", icon: BarChart3, industry: "Life Sciences", function: "Clinical Ops", complexity: "Medium", timeToValue: "6-10 weeks", description: "Trial data ingestion, site performance, enrollment analytics with governed AI." },
-  { id: "medical_affairs", name: "Medical Affairs", icon: Users, industry: "Life Sciences", function: "Medical Affairs", complexity: "Medium", timeToValue: "6-10 weeks", description: "HCP engagement prep, knowledge retrieval, medical information requests." },
-  { id: "model_risk", name: "Model Risk & Governance", icon: ShieldCheck, industry: "Financial Services", function: "Risk", complexity: "High", timeToValue: "8-12 weeks", description: "Model validation, governance frameworks, and audit trails for AI in regulated finance." },
-  { id: "wealth_advisor", name: "Wealth & Advisor Tools", icon: Lightbulb, industry: "Financial Services", function: "Wealth Management", complexity: "Medium", timeToValue: "4-8 weeks", description: "Advisor productivity, research synthesis, client communication support." },
-  { id: "hr_payroll", name: "HR & Payroll Workflows", icon: Users, industry: "Cross-Industry", function: "HR", complexity: "Medium", timeToValue: "4-8 weeks", description: "Policy Q&A, payroll support, employee self-service, and HR operations automation." },
+  { id: "tier1_databases", name: "Tier-1 Database Modernization", icon: Scale, industry: "Cross-Industry", function: "IT/Infra", complexity: "Medium", timeToValue: "4-8 weeks", description: "Modernize and standardize mission-critical databases with predictable performance and simplified operations." },
+  { id: "virtualization", name: "Virtualization Performance + Simplicity", icon: Users, industry: "Cross-Industry", function: "IT/Infra", complexity: "Low", timeToValue: "2-6 weeks", description: "Stabilize and accelerate virtualization platforms while reducing operational overhead and outages." },
+  { id: "enterprise_imaging", name: "Enterprise Imaging Data Path", icon: BarChart3, industry: "Healthcare", function: "Clinical Ops / IT", complexity: "Medium", timeToValue: "4-10 weeks", description: "Improve imaging workflow performance and availability; align to ransomware resilience and recovery SLAs." },
+  { id: "backup_recovery", name: "Backup + Recovery Posture", icon: ShieldCheck, industry: "Cross-Industry", function: "Security / IT", complexity: "Medium", timeToValue: "4-8 weeks", description: "Harden recovery posture, reduce RPO/RTO, and operationalize recovery runbooks with ecosystem tooling." },
+  { id: "file_object_ai", name: "File/Object for Analytics + AI Pipelines", icon: Search, industry: "Cross-Industry", function: "Data/AI", complexity: "High", timeToValue: "6-12 weeks", description: "High-throughput file/object storage for data lakes, model training pipelines, and large-scale unstructured workloads." },
+  { id: "ransomware_readiness", name: "Ransomware Readiness Program", icon: ShieldCheck, industry: "Regulated", function: "Security", complexity: "High", timeToValue: "6-12 weeks", description: "Move from backups to recovery confidence: immutable protection patterns, drills, and executive-ready posture reporting." },
 ];
 
 interface UseCaseLibraryProps {
@@ -50,7 +45,7 @@ export function UseCaseLibrary({ account, competitors }: UseCaseLibraryProps) {
         type: "use_case_recommendation",
         account,
         competitors,
-        context: `Based on ${account.name}'s profile, recommend the top 5 Snowflake AI Data Cloud use cases in priority order. Consider: industry (infer from company name if needed), developer population of ${account.developerPopulation.toLocaleString()}, AI maturity of ${account.aiMaturityScore}/100, first wedge "${account.firstWedge}", existing vendors (${account.existingVendorFootprint.join(", ")}). Be specific to this account.`,
+        context: `Based on ${account.name}'s profile, recommend the top 5 Everpure (formerly Pure Storage) use cases in priority order. Consider: industry (infer from company name if needed), developer population of ${account.developerPopulation.toLocaleString()}, AI maturity of ${account.aiMaturityScore}/100, first wedge "${account.firstWedge}", existing vendors (${account.existingVendorFootprint.join(", ")}). Be specific to this account.`,
       },
     });
   }, [account, competitors, recommendation]);
@@ -83,7 +78,7 @@ export function UseCaseLibrary({ account, competitors }: UseCaseLibraryProps) {
       <div className="flex flex-col gap-3 sm:gap-4 lg:flex-row lg:items-end lg:justify-between">
         <SectionHeader
           title="Use case library"
-          subtitle="Snowflake use cases for enterprise"
+          subtitle="Everpure use cases for enterprise"
         />
         <button
           onClick={generateRecommendation}

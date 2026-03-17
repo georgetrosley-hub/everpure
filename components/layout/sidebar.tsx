@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { SnowflakeLogoIcon, SnowflakeWordmark } from "@/components/ui/snowflake-logo";
+import { EverpureLogoIcon, EverpureWordmark } from "@/components/ui/everpure-logo";
 import {
   MessageCircle,
   LayoutDashboard,
@@ -15,10 +15,7 @@ import {
   Lightbulb,
   Sparkles,
   Calculator,
-  GraduationCap,
 } from "lucide-react";
-
-const SNOWFLAKE_SUMMIT_URL = "https://www.snowflake.com/en/summit/";
 
 /** Simplified nav for interview: 5 sections, merged content. */
 const sectionGroups = [
@@ -40,7 +37,6 @@ const sectionGroups = [
   {
     label: "Execution & Reference",
     items: [
-      { id: "crashCourse", label: "3-Day Crash Course", icon: GraduationCap },
       { id: "first90AndFieldKit", label: "First 90 Days & Field Kit", icon: FileText },
       { id: "useCasesAndCompetitive", label: "Use Cases & Positioning", icon: Lightbulb },
     ],
@@ -88,11 +84,11 @@ function SidebarBody({
         <div className="flex items-center justify-between gap-2">
           <div className={cn("flex items-center gap-2", compact && "justify-center")}>
             <div className="flex h-6 w-6 items-center justify-center overflow-hidden rounded-md">
-              <SnowflakeLogoIcon size={24} className="h-full w-full" />
+              <EverpureLogoIcon size={24} className="h-full w-full" />
             </div>
             {!compact && (
               <div>
-                <SnowflakeWordmark />
+                <EverpureWordmark />
                 <p className="text-[11px] text-text-muted">
                   GTM Command Center
                 </p>
@@ -195,7 +191,7 @@ function SidebarBody({
 
       <div className={cn("mt-auto border-t border-surface-border/30 px-5 py-4", compact && "px-3")}>
         <div className={cn("flex items-center gap-2.5", compact && "justify-center")}>
-          <SnowflakeLogoIcon size={20} className="shrink-0 opacity-80" />
+          <EverpureLogoIcon size={20} className="shrink-0 opacity-80" />
           {!compact && (
             <div className="min-w-0">
               <p className="truncate text-[12px] font-medium text-text-secondary">Internal AE</p>
@@ -207,16 +203,8 @@ function SidebarBody({
 
       {!compact && (
         <div className="space-y-2 px-5 pb-4">
-          <a
-            href={SNOWFLAKE_SUMMIT_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block text-[10px] text-accent/80 hover:text-accent underline underline-offset-2"
-          >
-            Snowflake Summit →
-          </a>
           <p className="text-[10px] text-text-faint/60">
-            Internal GTM · snowflake.com
+            Internal GTM · everpure (formerly Pure Storage)
           </p>
         </div>
       )}

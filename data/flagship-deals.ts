@@ -50,9 +50,9 @@ const flagshipDeals: Record<string, FlagshipDealContext> = {
       securityPath: "Unity Catalog for governance. Data residency US. Full audit logging. GxP validation deferred to Phase 2.",
     },
     competitiveBattle: {
-      incumbent: "Internal SAS/Excel, Snowflake evaluation in progress",
-      displacementStrategy: "Position Claude as the unified platform for trial analytics and RWE. Unity Catalog differentiates for regulated data. Land before Snowflake gains momentum.",
-      keyRisk: "Snowflake Cortex and life sciences focus may win if we're slow. Need executive sponsor to prioritize Claude pilot.",
+      incumbent: "Internal SAS/Excel, incumbent platform evaluation in progress",
+      displacementStrategy: "Position our platform as the unified foundation for trial analytics and RWE. Land before the incumbent evaluation gains momentum.",
+      keyRisk: "Incumbent platform evaluation may win if we're slow. Need executive sponsor to prioritize the pilot.",
       winCondition: "Clinical Data Sciences adopts Claude for trial analytics. Quality comfortable with governance. Expands to RWE and R&D.",
     },
     milestones: [
@@ -62,7 +62,7 @@ const flagshipDeals: Record<string, FlagshipDealContext> = {
       { label: "Pilot kickoff", date: "Apr 15", status: "upcoming", owner: "Sarah Chen" },
       { label: "90-day review gate", date: "Jul 15", status: "upcoming" },
     ],
-    lastCallSummary: "Sarah is aligned. Snowflake is in the mix — we need to move fast. Quality wants a clear governance narrative. Next: package Unity Catalog and audit story for their review.",
+    lastCallSummary: "Sarah is aligned. A competitor is in the mix — we need to move fast. Quality wants a clear governance narrative. Next: package the audit story for their review.",
   },
   merck: {
     championName: "James Okonkwo",
@@ -103,15 +103,15 @@ const flagshipDeals: Record<string, FlagshipDealContext> = {
         "Veeva integration validated",
         "Quality sign-off on governance",
       ],
-      timeline: "75-day pilot, kickoff May 1. Snowflake comparison in parallel — need to win on speed and flexibility.",
+      timeline: "75-day pilot, kickoff May 1. Competitor comparison in parallel — need to win on speed and flexibility.",
       owner: "Maria Rodriguez (Clin Dev Ops) + Quality",
       securityPath: "Unity Catalog, GxP-aware deployment. Audit trail. Data residency US.",
     },
     competitiveBattle: {
-      incumbent: "Snowflake evaluation for data warehouse",
+      incumbent: "Competitor evaluation for data warehouse",
       displacementStrategy: "Position Lakehouse as better than warehouse + separate ML. Unified platform, Delta Lake, Mosaic AI. Win on architecture and time-to-value.",
-      keyRisk: "Snowflake may win data warehouse decision. Need to land clinical analytics as distinct use case.",
-      winCondition: "Clinical Dev Ops adopts Claude. Demonstrates value before Snowflake decision. Expands to RWE and regulatory.",
+      keyRisk: "Competitor may win the data warehouse decision. Need to land clinical analytics as distinct use case.",
+      winCondition: "Clinical Dev Ops adopts the platform. Demonstrates value before the competitor decision. Expands to RWE and regulatory.",
     },
     milestones: [
       { label: "Clin Dev Ops intro", date: "Mar 12", status: "done", owner: "AE" },
@@ -120,7 +120,7 @@ const flagshipDeals: Record<string, FlagshipDealContext> = {
       { label: "Pilot kickoff", date: "May 1", status: "upcoming", owner: "Maria Rodriguez" },
       { label: "75-day review", date: "Jul 15", status: "upcoming" },
     ],
-    lastCallSummary: "Maria is evaluating Snowflake for data. We need to show clinical analytics value quickly. Veeva integration is key. Quality wants governance story.",
+    lastCallSummary: "Maria is evaluating an incumbent for data. We need to show clinical analytics value quickly. Veeva integration is key. Quality wants a governance story.",
   },
   "st-lukes": {
     championName: "VP Security / CISO",

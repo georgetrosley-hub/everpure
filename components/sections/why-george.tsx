@@ -3,15 +3,13 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Zap, Users, Target, Calendar, Globe } from "lucide-react";
 import { SectionHeader } from "@/components/ui/section-header";
-import { SnowflakeLogo } from "@/components/ui/snowflake-logo";
+import { EverpureLogo } from "@/components/ui/everpure-logo";
 
 const TIMELINE_HIGHLIGHTS = [
-  { date: "Jun 2025", event: "Summit 2025 — AI & apps reframe; Snowflake Intelligence, Openflow, Cortex AISQL" },
-  { date: "Nov 2025", event: "Snowflake Intelligence GA, Cortex Agents GA, MCP server GA" },
-  { date: "Dec 2025", event: "$200M Anthropic partnership; GPT-5.2 on Cortex AI" },
-  { date: "Feb 2026", event: "$200M OpenAI partnership; Cortex Code CLI GA; Observe closed" },
-  { date: "Feb 2026", event: "Snowflake Postgres GA; privatelink-only access GA" },
-  { date: "Mar 2026", event: "Cortex Code in Snowsight GA; resource budgets for AI" },
+  { date: "Now", event: "AI infrastructure demand is reshaping data estates and budgets" },
+  { date: "Now", event: "Ransomware resilience and recovery posture is non-negotiable" },
+  { date: "Now", event: "Platform standardization beats one-off point solutions at scale" },
+  { date: "Now", event: "Hybrid remains the default: cloud where it fits, on-prem where it must" },
 ];
 
 const BUYER_PERSONAS = [
@@ -33,18 +31,18 @@ export function WhyGeorge() {
       className="space-y-10 sm:space-y-12"
     >
       <SectionHeader
-        title="Why Snowflake, Why Now"
-        subtitle="Strategic transition from data platform to governed AI application platform"
+        title="Everpure GTM POV"
+        subtitle="How to win the territory: outcomes-led platform standardization"
         showLogo
       />
 
       {/* Thesis */}
       <div className="rounded-2xl border border-accent/20 bg-accent/[0.06] p-5 sm:p-6">
         <p className="text-[15px] font-medium leading-relaxed text-text-primary">
-          Snowflake is at an inflection point: from data platform to enterprise AI application platform. The roadmap is expanding from data workloads into application, agent, and developer workflows. The bottleneck is shifting from access to execution.
+          The winning motion is simple: land a high-pain workload, prove operational outcomes, then expand by standardizing the platform across adjacent teams and environments.
         </p>
         <p className="mt-3 text-[13px] leading-relaxed text-text-secondary">
-          Once enterprises can securely bring models to governed data, the next constraint is how fast builders can ship. That is where developer leverage becomes strategic — and where Snowflake’s Cortex Code, Postgres, MCP, and Agents create a growing class of enterprise builders.
+          Buyers reward clarity: performance where it matters, resilience you can measure, and a refresh-free operating model that reduces migrations and surprise costs.
         </p>
       </div>
 
@@ -71,7 +69,7 @@ export function WhyGeorge() {
       <section className="space-y-3">
         <h2 className="flex items-center gap-2 text-[15px] font-semibold tracking-tight text-text-primary">
           <Users className="h-4 w-4 text-accent" />
-          Snowflake’s buyer universe is expanding
+          The buyer universe is expanding
         </h2>
         <p className="text-[13px] leading-relaxed text-text-secondary">
           Not just data leaders anymore. Increasingly relevant personas:
@@ -88,20 +86,20 @@ export function WhyGeorge() {
         </div>
       </section>
 
-      {/* Workload specificity — what Snowflake managers look for */}
+      {/* Workload specificity — what strong managers look for */}
       <section className="space-y-3">
         <h2 className="flex items-center gap-2 text-[15px] font-semibold tracking-tight text-text-primary">
           <Target className="h-4 w-4 text-accent" />
           Workload specificity
         </h2>
         <p className="text-[13px] leading-relaxed text-text-secondary">
-          Think in specific workloads, not “expand the platform.” Snowflake managers want to see:
+          Think in specific workloads, not “expand the platform.” Strong reps lead with:
         </p>
         <ul className="list-disc space-y-1 pl-5 text-[13px] text-text-secondary">
-          <li>AI data pipelines · feature stores · data apps · governance / data sharing · ML training pipelines</li>
+          <li>Tier-1 databases/virtualization · enterprise imaging · backup/recovery · AI-adjacent file/object pipelines</li>
         </ul>
         <p className="mt-2 text-[13px] leading-relaxed text-text-secondary">
-          Example expansion path: <strong className="text-text-primary">Land ML feature store for fraud models → expand into customer analytics → expand into AI agents.</strong> That level of specificity shows true Snowflake thinking.
+          Example expansion path: <strong className="text-text-primary">Land Epic/VMware performance + resilience → expand into cyber recovery posture → expand into enterprise imaging + AI data pipelines.</strong>
         </p>
       </section>
 
@@ -112,23 +110,23 @@ export function WhyGeorge() {
           Consumption expansion math
         </h2>
         <p className="text-[13px] leading-relaxed text-text-secondary">
-          Snowflake is a usage model company. Frame expansion in consumption, not just strategy:
+          Frame expansion in outcomes and multi-year platform footprint, not one refresh:
         </p>
         <div className="mt-2 grid grid-cols-3 gap-2 rounded-xl border border-surface-border/50 bg-surface-muted/20 p-3">
           <div className="rounded-lg bg-surface-elevated/50 px-3 py-2 text-center">
             <p className="text-[10px] font-medium uppercase text-text-faint">Year 1</p>
-            <p className="mt-0.5 font-semibold tabular-nums text-accent">$200k</p>
-            <p className="text-[11px] text-text-muted">consumption</p>
+            <p className="mt-0.5 font-semibold tabular-nums text-accent">Land</p>
+            <p className="text-[11px] text-text-muted">first workload</p>
           </div>
           <div className="rounded-lg bg-surface-elevated/50 px-3 py-2 text-center">
             <p className="text-[10px] font-medium uppercase text-text-faint">Year 2</p>
-            <p className="mt-0.5 font-semibold tabular-nums text-accent">$600k</p>
-            <p className="text-[11px] text-text-muted">consumption</p>
+            <p className="mt-0.5 font-semibold tabular-nums text-accent">Expand</p>
+            <p className="text-[11px] text-text-muted">adjacent teams</p>
           </div>
           <div className="rounded-lg bg-surface-elevated/50 px-3 py-2 text-center">
             <p className="text-[10px] font-medium uppercase text-text-faint">Year 3</p>
-            <p className="mt-0.5 font-semibold tabular-nums text-accent">$1.5M</p>
-            <p className="text-[11px] text-text-muted">consumption</p>
+            <p className="mt-0.5 font-semibold tabular-nums text-accent">Standardize</p>
+            <p className="text-[11px] text-text-muted">platform footprint</p>
           </div>
         </div>
       </section>
@@ -140,10 +138,10 @@ export function WhyGeorge() {
           Partner ecosystem
         </h2>
         <p className="text-[13px] leading-relaxed text-text-secondary">
-          Snowflake wins a lot of deals through the ecosystem. Show partner leverage where it fits:
+          Most enterprise deals are ecosystem deals. Show partner leverage where it fits:
         </p>
         <div className="flex flex-wrap gap-2">
-          {["AWS", "dbt", "Fivetran", "Sigma", "Accenture", "Deloitte"].map((p) => (
+          {["VMware", "Cisco", "NVIDIA", "Veeam", "Rubrik", "Accenture", "Deloitte"].map((p) => (
             <span
               key={p}
               className="rounded-md border border-surface-border/50 bg-surface-muted/30 px-3 py-1.5 text-[12px] text-text-secondary"
@@ -174,7 +172,7 @@ export function WhyGeorge() {
           <Zap className="h-5 w-5 shrink-0 text-accent" />
           <div>
             <p className="font-medium text-text-primary">
-              The value is not just better data or better models. It is compressing the path from governed data to production software. In Snowflake-heavy enterprises, speed only matters if it survives governance.
+              The value is fewer migrations, fewer outages, and faster recovery. In enterprise estates, speed only matters if it survives governance, security, and operations.
             </p>
           </div>
         </div>
@@ -183,38 +181,38 @@ export function WhyGeorge() {
       {/* Links */}
       <div className="flex flex-wrap items-center gap-3">
         <a
-          href="https://www.snowflake.com/en/summit/"
+          href="https://www.purestorage.com/"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-[13px] font-medium text-white transition-colors hover:bg-accent/90"
         >
-          Snowflake Summit
+          Everpure site
           <ExternalLink className="h-3.5 w-3.5" />
         </a>
         <a
-          href="https://www.snowflake.com/en/product/snowflake-intelligence/"
+          href="https://www.purestorage.com/products.html"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-lg border border-surface-border bg-surface-elevated px-4 py-2 text-[13px] font-medium text-text-primary transition-colors hover:bg-surface-muted"
         >
-          Snowflake Intelligence
+          Platform overview
           <ExternalLink className="h-3.5 w-3.5" />
         </a>
         <a
-          href="https://www.snowflake.com/en/product/ai/"
+          href="https://www.purestorage.com/solutions.html"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-lg border border-accent/40 bg-transparent px-4 py-2 text-[13px] font-medium text-accent transition-colors hover:bg-accent/10"
         >
-          AI Data Cloud
+          Solutions
           <ExternalLink className="h-3.5 w-3.5" />
         </a>
       </div>
 
       <div className="flex items-center gap-3 rounded-xl border border-surface-border/40 bg-surface-muted/20 px-4 py-3">
-        <SnowflakeLogo size={20} />
+        <EverpureLogo size={20} />
         <p className="text-[12px] text-text-muted">
-          Internal GTM · Why Snowflake, Why Now · snowflake.com
+          Internal GTM · Everpure (formerly Pure Storage)
         </p>
       </div>
     </motion.div>

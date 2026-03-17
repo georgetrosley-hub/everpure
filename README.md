@@ -1,19 +1,19 @@
-# Snowflake GTM Command Center
+# Everpure GTM Command Center
 
-Internal GTM hub for Snowflake Account Executives. This territory is heavy on **existing customers** — the job is to **land net-new logos** and **aggressively expand consumption and use cases** for Snowflake within these accounts. This project provides a single place for platform narrative, deal playbooks, field kit, and war room tools.
+Internal GTM hub for Everpure (formerly Pure Storage) account teams. This territory is heavy on **existing customers** — the job is to **land net-new logos** and **expand platform footprint** within these accounts. This project provides a single place for platform narrative, deal playbooks, field kit, and war room tools.
 
 ## What’s inside
 
-- **Platform Overview** — AI Data Cloud pillars, key metrics, and strategic message
-- **Why Snowflake, Why Now** — Strategic transition, timeline highlights, buyer expansion
+- **Platform Overview** — platform pillars, key metrics, and strategic message
+- **Why now** — strategic transition, timeline highlights, buyer expansion
 - **War Room** — Account-centric view (accounts N/A until configured)
 - **Account Intelligence, Pipeline, Deal Playbook, Deal Progression, Account Log**
 - **Stakeholder Map, Deal Plan**
 - **First 90 Days, Deal Signals, Field Kit**
 - **Use Case Library, ROI Calculator, Territory Engine**
-- **Platform vs Alternatives** — Snowflake vs Databricks, BigQuery, Redshift
+- **Platform vs Alternatives** — competitive positioning
 
-Content is aligned with Snowflake’s position as the **governed operating system for enterprise AI**: Cortex, Snowflake Intelligence, Cortex Code, MCP, Snowflake Postgres, Horizon, and Observe.
+Content is aligned to an Everpure (formerly Pure Storage) land-and-expand motion across workloads and platform standardization.
 
 ## Accounts
 
@@ -40,13 +40,13 @@ Next.js 14, TypeScript, Tailwind CSS, Framer Motion, Recharts. Optional Claude A
 
 ## Deploy & push to GitHub
 
-Repo: **https://github.com/georgetrosley-hub/snowflake**
+Repo: **https://github.com/georgetrosley-hub/everpure**
 
 ```bash
-git remote add origin https://github.com/georgetrosley-hub/snowflake.git
-# or, if origin exists: git remote set-url origin https://github.com/georgetrosley-hub/snowflake.git
+git remote add origin https://github.com/georgetrosley-hub/everpure.git
+# or, if origin exists: git remote set-url origin https://github.com/georgetrosley-hub/everpure.git
 git add -A
-git commit -m "Rebrand to Snowflake GTM Command Center for internal AEs"
+git commit -m "Set up Everpure GTM Command Center"
 git push -u origin main
 ```
 
@@ -54,4 +54,4 @@ git push -u origin main
 
 ---
 
-Built for Snowflake internal GTM. Platform narrative and section ideas informed by the Snowflake research pack and snowflake.com.
+Built for Everpure (formerly Pure Storage) internal GTM.

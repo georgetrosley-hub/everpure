@@ -12,57 +12,54 @@ import {
   Globe,
 } from "lucide-react";
 import { SectionHeader } from "@/components/ui/section-header";
-import { SnowflakeLogo } from "@/components/ui/snowflake-logo";
+import { EverpureLogo } from "@/components/ui/everpure-logo";
 
 const PLATFORM_PILLARS = [
   {
-    title: "Data foundation",
+    title: "Data platform",
     icon: Database,
     items: [
-      "Data warehouse, data lake & Iceberg support",
-      "Data engineering, collaboration & marketplace",
-      "Governance through Horizon Catalog",
+      "FlashArray for mission-critical block workloads (databases, virtualization)",
+      "FlashBlade for high-throughput file/object workloads (analytics, AI pipelines)",
+      "Unified operations and visibility with Pure1",
     ],
   },
   {
-    title: "AI stack",
+    title: "AI-ready infrastructure",
     icon: Cpu,
     items: [
-      "Cortex AI Functions / AISQL — model-powered analysis in SQL & Python",
-      "Snowflake Intelligence — natural-language enterprise intelligence",
-      "Cortex Agents — orchestration across structured & unstructured data",
-      "Cortex Search, Cortex Analyst — multi-model (OpenAI, Anthropic)",
+      "High-performance data paths for AI training/inference and analytics",
+      "Simple scaling + consistent performance for GPU-adjacent pipelines",
+      "Hybrid patterns where data stays governed and available",
     ],
   },
   {
-    title: "Developer & app platform",
+    title: "Cloud + app platform",
     icon: Code,
     items: [
-      "Cortex Code — AI-assisted development (CLI & Snowsight GA)",
-      "Snowpark, notebooks, container services",
-      "Native Apps, Snowflake-managed MCP server",
-      "Snowflake Postgres — enterprise-ready PostgreSQL",
+      "Evergreen subscription operating model (upgrade/refresh-free outcomes)",
+      "Evergreen//One (as-a-service) where it fits",
+      "Portworx for Kubernetes data services (where applicable)",
     ],
   },
   {
-    title: "Trust & control",
+    title: "Resilience & trust",
     icon: Shield,
     items: [
-      "Horizon Catalog — definitions, lineage, policy consistency",
-      "Resource budgets for AI features",
-      "Privatelink-only access",
-      "Observe — AI-powered observability",
+      "Immutable protection patterns (e.g., SafeMode-style immutability) and recovery planning",
+      "Ransomware resilience posture: detect → contain → recover",
+      "Operational consistency across on-prem and hybrid estates",
     ],
   },
 ];
 
 const METRICS = [
-  { label: "Product revenue (Q4 FY26)", value: "$1.23B", sub: "30% YoY" },
-  { label: "RPO", value: "$9.77B", sub: "" },
-  { label: "Forbes Global 2000 customers", value: "790", sub: "" },
-  { label: "Customers >$1M TTM product revenue", value: "733", sub: "" },
-  { label: "Net revenue retention", value: "125%", sub: "" },
-  { label: "Global customers", value: "12,600+", sub: "" },
+  { label: "Territory focus", value: "Land + expand", sub: "existing + net-new" },
+  { label: "Primary motion", value: "Standardize", sub: "platform footprint" },
+  { label: "Buyer map", value: "IT + Security", sub: "Apps + Infra" },
+  { label: "Workloads", value: "Tier-1 + AI", sub: "data + resilience" },
+  { label: "Deal hygiene", value: "MEDDPICC", sub: "multi-threaded" },
+  { label: "Outcome", value: "Fewer outages", sub: "faster recovery" },
 ];
 
 export function Resume() {
@@ -75,17 +72,17 @@ export function Resume() {
     >
       <SectionHeader
         title="Platform Overview"
-        subtitle="The AI Data Cloud — one trusted platform for enterprise data and agentic intelligence"
+        subtitle="Everpure (formerly Pure Storage) — AI-ready data platform with an outcomes-led operating model"
         showLogo
       />
 
       {/* Hero thesis */}
       <div className="rounded-2xl border border-accent/20 bg-accent/[0.06] p-5 sm:p-6">
         <p className="text-[15px] font-medium leading-relaxed text-text-primary">
-          Snowflake is no longer just a warehouse story. It is becoming the governed operating system for enterprise AI.
+          Everpure is sold on outcomes: simplify the estate, raise resilience, and standardize the data platform across mission-critical workloads.
         </p>
         <p className="mt-3 text-[13px] leading-relaxed text-text-secondary">
-          The winning AI platform will combine models, governed enterprise data, interoperability, security, lineage, and production-grade operations. Snowflake is building that control plane — from data foundation to Cortex Agents, Cortex Code, Snowflake Intelligence, and Observe.
+          The winning platform story is consistency: predictable performance, reduced operational drag, and a clear land-and-expand path from a first workload into standardization, cyber recovery posture, and AI-adjacent data pipelines.
         </p>
       </div>
 
@@ -148,15 +145,15 @@ export function Resume() {
           The strategic message
         </h2>
         <p className="text-[13px] leading-relaxed text-text-secondary">
-          Enterprises do not need to stitch together a brittle stack of separate warehouse, catalog, vector/search layer, inference layer, agent framework, developer AI tooling, and observability plane. Snowflake is building one governed AI Data Cloud — easy, connected, trusted.
+          Enterprises do not need a fragile patchwork of arrays, point tools, and “one-off” recovery plans. Standardize the platform, modernize cyber recovery, and make AI/data growth sustainable without constant migrations.
         </p>
       </div>
 
       {/* Footer */}
       <div className="flex items-center gap-3 rounded-xl border border-surface-border/40 bg-surface-muted/20 px-4 py-3">
-        <SnowflakeLogo size={24} />
+        <EverpureLogo size={24} />
         <p className="text-[12px] text-text-muted">
-          Internal GTM · Platform narrative for Account Executives · snowflake.com
+          Internal GTM · Platform narrative for account teams · everpure (formerly Pure Storage)
         </p>
       </div>
     </motion.div>
