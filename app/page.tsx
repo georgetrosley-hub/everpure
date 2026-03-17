@@ -7,6 +7,7 @@ import { StatusBar } from "@/components/layout/status-bar";
 import { ChatPanel } from "@/components/layout/chat-panel";
 import { Overview } from "@/components/sections/overview";
 import { PipelineDashboard } from "@/components/sections/pipeline-dashboard";
+import { AccountListDashboard } from "@/components/sections/account-list-dashboard";
 import { PlatformStrategy } from "@/components/sections/platform-strategy";
 import { First90AndFieldKit } from "@/components/sections/first90-and-field-kit";
 import { UseCasesAndPositioning } from "@/components/sections/use-cases-and-positioning";
@@ -73,6 +74,7 @@ function MainContent() {
     platformStrategy: <PlatformStrategy />,
     roiTco: <EnterpriseRoiTco />,
     crashCourse: <SnowflakeCrashCourse />,
+    accounts: <AccountListDashboard />,
     overview: (
       <Overview
         account={account}

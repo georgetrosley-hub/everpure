@@ -10,6 +10,7 @@ import {
   PanelLeftOpen,
   X,
   BarChart3,
+  Building2,
   FileText,
   Lightbulb,
   Sparkles,
@@ -31,6 +32,7 @@ const sectionGroups = [
   {
     label: "Territory",
     items: [
+      { id: "accounts", label: "Accounts", icon: Building2 },
       { id: "overview", label: "War Room", icon: LayoutDashboard },
       { id: "pipeline", label: "Pipeline", icon: BarChart3 },
     ],

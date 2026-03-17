@@ -71,6 +71,8 @@ export interface ApprovalRequest {
 export interface Account {
   id: string;
   name: string;
+  /** Customer flag from your list: Y = customer, N = not a customer, ? = unknown */
+  customerStatus?: "Y" | "N" | "?";
   /** Total Addressable Market in $M (e.g. 50 = $50M TAM). Optional; show "N/A" when missing/zero. */
   tam?: number;
   employeeCount: number;
