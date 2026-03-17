@@ -193,28 +193,28 @@ export function EnterpriseRoiTco() {
             <div className="flex flex-wrap gap-2">
               <button
                 type="button"
-                onClick={() => applyPreset(DEFAULT_LEGACY, DEFAULT_SNOWFLAKE)}
+                onClick={() => applyPreset(DEFAULT_LEGACY, DEFAULT_PLATFORM)}
                 className="rounded-md border border-surface-border bg-surface-muted/40 px-3 py-1.5 text-[12px] text-text-secondary transition-colors hover:bg-surface-muted hover:text-text-primary"
               >
                 Typical enterprise
               </button>
               <button
                 type="button"
-                onClick={() => applyPreset(PHARMA_LEGACY, PHARMA_SNOWFLAKE)}
+                onClick={() => applyPreset(PHARMA_LEGACY, PHARMA_PLATFORM)}
                 className="rounded-md border border-surface-border bg-surface-muted/40 px-3 py-1.5 text-[12px] text-text-secondary transition-colors hover:bg-surface-muted hover:text-text-primary"
               >
                 Pharma
               </button>
               <button
                 type="button"
-                onClick={() => applyPreset(FINANCIAL_LEGACY, FINANCIAL_SNOWFLAKE)}
+                onClick={() => applyPreset(FINANCIAL_LEGACY, FINANCIAL_PLATFORM)}
                 className="rounded-md border border-surface-border bg-surface-muted/40 px-3 py-1.5 text-[12px] text-text-secondary transition-colors hover:bg-surface-muted hover:text-text-primary"
               >
                 Financial services
               </button>
               <button
                 type="button"
-                onClick={() => applyPreset(DIGITAL_LEGACY, DIGITAL_SNOWFLAKE)}
+                onClick={() => applyPreset(DIGITAL_LEGACY, DIGITAL_PLATFORM)}
                 className="rounded-md border border-surface-border bg-surface-muted/40 px-3 py-1.5 text-[12px] text-text-secondary transition-colors hover:bg-surface-muted hover:text-text-primary"
               >
                 Digital native
