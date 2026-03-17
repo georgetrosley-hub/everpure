@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles, Zap, Shield, BarChart3 } from "lucide-react";
+import { Zap, Shield, BarChart3 } from "lucide-react";
+import { EverpureMark } from "@/components/ui/everpure-mark";
 
 const roadmap = [
   {
@@ -20,7 +21,7 @@ const roadmap = [
     desc: "Every agent action logged. Human-in-the-loop preserved for approvals. Compliance-ready for regulated industries.",
   },
   {
-    icon: Sparkles,
+    icon: EverpureMark,
     title: "Executive briefing mode",
     desc: "One-click synthesis of account narrative, blockers, and next meeting prep. Built for QBRs and exec sponsor calls.",
   },

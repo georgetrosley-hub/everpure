@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { EverpureLogoIcon, EverpureWordmark } from "@/components/ui/everpure-logo";
+import { EverpureMark } from "@/components/ui/everpure-mark";
 import {
   MessageCircle,
   LayoutDashboard,
@@ -13,7 +14,6 @@ import {
   Building2,
   FileText,
   Lightbulb,
-  Sparkles,
   Calculator,
 } from "lucide-react";
 
@@ -22,7 +22,7 @@ const sectionGroups = [
   {
     label: "Start",
     items: [
-      { id: "platformStrategy", label: "Platform & Strategy", icon: Sparkles },
+      { id: "platformStrategy", label: "Platform & Strategy", icon: EverpureMark },
       { id: "roiTco", label: "ROI / TCO Model", icon: Calculator },
     ],
   },

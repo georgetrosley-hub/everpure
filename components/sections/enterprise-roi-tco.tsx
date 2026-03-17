@@ -45,8 +45,8 @@ import {
   Lightbulb,
   Building2,
   Briefcase,
-  Sparkles,
 } from "lucide-react";
+import { EverpureMark } from "@/components/ui/everpure-mark";
 
 const chartGrid = "rgb(var(--surface-divider))";
 const chartTick = "rgb(var(--text-muted))";
@@ -643,7 +643,7 @@ export function EnterpriseRoiTco() {
                     value={businessValue.dataSharingEfficiency}
                   />
                   <ValueCard
-                    icon={Sparkles}
+                    icon={EverpureMark}
                     label="AI readiness / AI workload enablement"
                     value={businessValue.aiReadiness}
                   />

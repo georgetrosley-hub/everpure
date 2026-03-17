@@ -7,7 +7,6 @@ import {
   Code,
   Shield,
   TrendingUp,
-  Sparkles,
   Layers,
   Globe,
 } from "lucide-react";

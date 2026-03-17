@@ -6,11 +6,11 @@ import {
   Users,
   Swords,
   Compass,
-  Sparkles,
   ChevronRight,
   Building2,
 } from "lucide-react";
 import { SectionHeader } from "@/components/ui/section-header";
+import { EverpureMark } from "@/components/ui/everpure-mark";
 import { cn } from "@/lib/utils";
 import type { Account, Competitor, Stakeholder } from "@/types";
 
@@ -238,7 +238,7 @@ export function AccountIntelligence({
         <div className="flex items-center justify-between gap-4 mb-4">
           <div className="flex items-center gap-2">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-violet-500/10">
-              <Sparkles className="h-4 w-4 text-violet-400" strokeWidth={1.8} />
+              <EverpureMark className="h-4 w-4 text-violet-400" size={16} />
             </div>
             <h3 className="text-[13px] font-semibold uppercase tracking-wider text-text-primary">
               Claude use cases
