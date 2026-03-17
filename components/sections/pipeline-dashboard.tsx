@@ -5,6 +5,7 @@ import { BarChart3, Inbox } from "lucide-react";
 import { SectionHeader } from "@/components/ui/section-header";
 import { pipelineRows } from "@/data/pipeline";
 import { cn } from "@/lib/utils";
+import { useApp } from "@/app/context/app-context";
 
 const stageColors: Record<string, string> = {
   Discovery: "text-sky-400/90",
@@ -19,6 +20,7 @@ const stageColors: Record<string, string> = {
 };
 
 export function PipelineDashboard() {
+  const { workspaceDraft, updateWorkspaceField } = useApp();
   const totalValue = pipelineRows.reduce((sum, row) => sum + row.valueM, 0);
   const hasRows = pipelineRows.length > 0;
 
@@ -33,6 +35,92 @@ export function PipelineDashboard() {
         title="Territory pipeline"
         subtitle="Net-new logos and expansion within existing customers. Add accounts in data/pipeline.ts and data/accounts.ts once you receive the 15 from the previous rep."
       />
+
+      <section className="rounded-[22px] border border-accent/20 bg-white/[0.02] p-4 sm:p-5">
+        <div className="flex items-center justify-between gap-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-text-faint">
+            Deal header (Snowflake-style)
+          </p>
+          <p className="text-[11px] text-text-muted">
+            Forecast:{" "}
+            <span className="font-medium text-text-secondary">
+              {workspaceDraft.forecastCategory}
+            </span>
+          </p>
+        </div>
+
+        <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="space-y-1.5 lg:col-span-2">
+            <label className="text-[10px] font-medium uppercase tracking-[0.12em] text-text-muted">
+              Opportunity name
+            </label>
+            <input
+              value={workspaceDraft.opportunityName}
+              onChange={(e) => updateWorkspaceField("opportunityName", e.target.value)}
+              placeholder="ADP · Governed Serving Layer Expansion"
+              className="w-full rounded-lg border border-surface-border/50 bg-surface px-3 py-2 text-[13px] text-text-primary placeholder:text-text-muted/60 focus:border-accent/30 focus:outline-none"
+            />
+          </div>
+
+          <div className="space-y-1.5">
+            <label className="text-[10px] font-medium uppercase tracking-[0.12em] text-text-muted">
+              ACV (USD)
+            </label>
+            <input
+              inputMode="decimal"
+              value={workspaceDraft.acvUsd}
+              onChange={(e) =>
+                updateWorkspaceField("acvUsd", e.target.value.replace(/[^\d.]/g, ""))
+              }
+              placeholder="250000"
+              className="w-full rounded-lg border border-surface-border/50 bg-surface px-3 py-2 text-[13px] text-text-primary placeholder:text-text-muted/60 focus:border-accent/30 focus:outline-none"
+            />
+          </div>
+
+          <div className="space-y-1.5">
+            <label className="text-[10px] font-medium uppercase tracking-[0.12em] text-text-muted">
+              Term (months)
+            </label>
+            <select
+              value={workspaceDraft.termMonths}
+              onChange={(e) => updateWorkspaceField("termMonths", e.target.value)}
+              className="w-full rounded-lg border border-surface-border/50 bg-surface px-3 py-2 text-[13px] text-text-primary focus:border-accent/30 focus:outline-none"
+            >
+              <option value="12">12</option>
+              <option value="24">24</option>
+              <option value="36">36</option>
+              <option value="48">48</option>
+              <option value="60">60</option>
+            </select>
+          </div>
+
+          <div className="space-y-1.5">
+            <label className="text-[10px] font-medium uppercase tracking-[0.12em] text-text-muted">
+              Forecast category
+            </label>
+            <select
+              value={workspaceDraft.forecastCategory}
+              onChange={(e) =>
+                updateWorkspaceField(
+                  "forecastCategory",
+                  e.target.value as typeof workspaceDraft.forecastCategory
+                )
+              }
+              className="w-full rounded-lg border border-surface-border/50 bg-surface px-3 py-2 text-[13px] text-text-primary focus:border-accent/30 focus:outline-none"
+            >
+              <option value="Pipeline">Pipeline</option>
+              <option value="Best Case">Best Case</option>
+              <option value="Commit">Commit</option>
+              <option value="Closed Won">Closed Won</option>
+              <option value="Closed Lost">Closed Lost</option>
+            </select>
+          </div>
+        </div>
+
+        <p className="mt-3 text-[11px] text-text-faint">
+          Tip: Deal size is typically tracked as ACV; term drives TCV. Commit is a forecast category.
+        </p>
+      </section>
 
       <div className="rounded-[22px] border border-accent/20 bg-white/[0.02] overflow-hidden">
         <div className="flex items-center justify-between border-b border-surface-border/40 px-4 py-3 sm:px-5">

@@ -57,6 +57,10 @@ export function buildWorkspaceDraft(
     winTheme: "",
     thisWeekFocus: "",
     operatorNotes: "",
+    opportunityName: `${account.name} · Expansion`,
+    acvUsd: "",
+    termMonths: "12",
+    forecastCategory: "Pipeline",
   };
 }
 

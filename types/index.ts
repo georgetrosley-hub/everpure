@@ -146,6 +146,14 @@ export interface WorkspaceDraft {
   winTheme: string;
   thisWeekFocus: string;
   operatorNotes: string;
+  /** CRM-style deal header fields (lightweight) */
+  opportunityName: string;
+  /** Annual Contract Value in USD (not TCV). Store as string for easy editing. */
+  acvUsd: string;
+  /** Contract term in months (e.g., 12/24/36). Store as string for easy editing. */
+  termMonths: string;
+  /** Forecast category (Salesforce-style) */
+  forecastCategory: "Pipeline" | "Best Case" | "Commit" | "Closed Won" | "Closed Lost";
 }
 
 export interface AccountUpdate {
